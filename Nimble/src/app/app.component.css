@@ -28,6 +28,13 @@ body {
   font-weight: bold !important;
 }
 
+#text-logo {
+  position: absolute;
+  height: 110px;
+  top: 0px;
+  left: 0px;
+}
+
 #help {
   position: absolute;
   top: 90px;
