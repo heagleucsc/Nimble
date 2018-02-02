@@ -32,6 +32,10 @@ body {
   vertical-align: middle;
 }
 
+.red {
+  color: #ED1C24;
+}
+
 #text-logo {
   position: absolute;
   height: 110px;
