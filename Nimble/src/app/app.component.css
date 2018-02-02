@@ -28,17 +28,15 @@ body {
   font-weight: bold !important;
 }
 
+.nav-icon {
+  vertical-align: middle;
+}
+
 #text-logo {
   position: absolute;
   height: 110px;
   top: 0px;
   left: 0px;
-}
-
-#help {
-  position: absolute;
-  top: 90px;
-  left: 920px;
 }
 
 #sidebar {
@@ -48,8 +46,20 @@ body {
   width: 25%;
 }
 
+#nav-btn-help {
+  position: absolute;
+  background: #EBEBEB;
+  border: none;
+  font-size: 16px;
+  top: 60px;
+  left: 920px;
+}
+
 #nav-btn-start {
   position: absolute;
+  background: white;
+  border: none;
+  font-size: 16px;
   bottom: 10px;
   right: 10px;
   font-weight: bold;
