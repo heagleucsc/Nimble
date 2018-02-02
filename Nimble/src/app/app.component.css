@@ -18,6 +18,7 @@ body {
   width: 200px;
   margin-top: 2px;
   margin-bottom: 2px;
+  text-align: left;
   font-weight: lighter;
   font-size: 26px !important;
   border: none;
@@ -28,10 +29,19 @@ body {
   font-weight: bold !important;
 }
 
-#help {
+.nav-icon {
+  vertical-align: middle;
+}
+
+.red {
+  color: #ED1C24;
+}
+
+#text-logo {
   position: absolute;
-  top: 90px;
-  left: 920px;
+  height: 110px;
+  top: 0px;
+  left: 0px;
 }
 
 #sidebar {
@@ -41,8 +51,20 @@ body {
   width: 25%;
 }
 
+#nav-btn-help {
+  position: absolute;
+  background: #EBEBEB;
+  border: none;
+  font-size: 16px;
+  top: 58px;
+  left: 920px;
+}
+
 #nav-btn-start {
   position: absolute;
+  background: white;
+  border: none;
+  font-size: 16px;
   bottom: 10px;
   right: 10px;
   font-weight: bold;
