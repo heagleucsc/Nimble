@@ -1,31 +1,42 @@
 header {
   position: relative;
-  background-color: #EBEBEB;
+  background-color: #FFFFFF;
   height: 110px;
 }
 
 body {
   position: relative;
+  font-family: "Open Sans";
   height: 330px;
   width: 600px;
   padding-left: 25%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans";
+}
+
+p {
+  font-family: "Open Sans";
+}
+
 .nav-btn {
-  background: #A8A8A8;
+  background: #666666;
   color: #FFFFFF;
   height: 65px;
   width: 200px;
   margin-top: 2px;
   margin-bottom: 2px;
   text-align: left;
+  font-family: "Open Sans";
   font-weight: lighter;
   font-size: 26px !important;
   border: none;
 }
 
 .nav-btn-cur {
-  background: #666666 !important;
+  background: #68c9d6 !important;
+  font-family: "Open Sans";
   font-weight: bold !important;
 }
 
@@ -35,6 +46,21 @@ body {
 
 .red {
   color: #ED1C24;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  /* text inside card under image */
+    padding: 2px 16px;
+}
+
+img.resize {
+  max-width:100%;
+  max-height:100%;
 }
 
 #text-logo {
@@ -53,7 +79,7 @@ body {
 
 #nav-btn-help {
   position: absolute;
-  background: #EBEBEB;
+  background: #FFFFFF;
   border: none;
   font-size: 16px;
   top: 58px;
@@ -62,10 +88,8 @@ body {
 
 #nav-btn-start {
   position: absolute;
-  background: white;
   border: none;
-  font-size: 16px;
-  bottom: 10px;
-  right: 10px;
+  font-size: large;
   font-weight: bold;
+  right: 5px;
 }
