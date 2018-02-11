@@ -1,0 +1,30 @@
+.red {
+  color: #ED1C24;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  /* text inside card under image */
+    padding: 2px 16px;
+}
+
+img.resize {
+  max-width:100%;
+  max-height:100%;
+}
+
+.nav-icon {
+  vertical-align: middle;
+}
+
+#nav-btn-start {
+  position: absolute;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  right: 5px;
+}
