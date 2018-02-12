@@ -20,5 +20,3 @@ export class MatchingComponent implements OnInit {
 	  console.log(t.left);
   }
 }
-
-
