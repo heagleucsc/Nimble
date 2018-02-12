@@ -17,14 +17,11 @@ img.resize {
   max-height:100%;
 }
 
-.nav-icon {
-  vertical-align: middle;
-}
-
 #nav-btn-start {
   position: absolute;
   border: none;
   font-size: large;
   font-weight: bold;
   right: 5px;
+  background-color: white;
 }
