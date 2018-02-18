@@ -78,4 +78,11 @@ export class MatchingComponent implements OnInit {
 	  console.log(t1.left);
 	  console.log(t1.bottom);
   }
+  
+  clickLeft(){
+	  console.log("Left Button Pushed!");
+  }
+  clickRight(){
+	  console.log("Right Button Pushed!");
+  }
 }
