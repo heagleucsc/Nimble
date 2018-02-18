@@ -8,20 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class MatchingComponent implements OnInit {
 
   imgFolder: string = "../../assets/matching/imgs/";
-  left:string[10] = ["", "", "", "", "", "", "", "", "", ""];
-  right:string[10] = ["", "", "", "", "", "", "", "", "", ""];
-
+  left:string[] = ["", "", "", "", "", "", "", "", "", ""];
+  right:string[] = ["", "", "", "", "", "", "", "", "", ""];
 
   constructor() {
   }
 
   ngOnInit() {
+    this.initializeLeft(this.left);
+    this.initializeRight(this.right);
   }
 
   initializeLeft(left:string[]): void {
-    for img in left {
-      img = `${this.imgFolder}mag.png`;
-      console.log(img);
+    for (let i in left) {
+      left[i] = `${this.imgFolder}mag.png`;
+    }
+  }
+
+  initializeRight(right:string[]): void {
+    for (let i in right) {
+      right[i] = `[placeholder]`;
     }
   }
 
