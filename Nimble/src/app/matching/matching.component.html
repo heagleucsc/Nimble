@@ -1,15 +1,9 @@
+<canvas id="myCanvas" ></canvas>
+
+
 <div id="img">
     <ul>
-        <li><input type="image" src="{{left[0]}}" name="left0" class="buttonImg" id="left0"></li>
-        <li><input type="image" src="{{left[1]}}" name="left1" class="buttonImg" id="left1"></li>
-        <li><input type="image" src="{{left[2]}}" name="left2" class="buttonImg" id="left2"></li>
-        <li><input type="image" src="{{left[3]}}" name="left3" class="buttonImg" id="left3"></li>
-        <li><input type="image" src="{{left[4]}}" name="left4" class="buttonImg" id="left4"></li>
-        <li><input type="image" src="{{left[5]}}" name="left5" class="buttonImg" id="left5"></li>
-        <li><input type="image" src="{{left[6]}}" name="left6" class="buttonImg" id="left6"></li>
-        <li><input type="image" src="{{left[7]}}" name="left7" class="buttonImg" id="left7"></li>
-        <li><input type="image" src="{{left[8]}}" name="left8" class="buttonImg" id="left8"></li>
-        <li><input type="image" src="{{left[9]}}" name="left9" class="buttonImg" id="left9"></li>
+        <li *ngFor="let img of left; let i = index"><input type="image" src="{{img}}" class="buttonImg"></li>
     </ul>
 </div>
 
@@ -21,15 +15,7 @@ style="border:1px solid #000000;">
 
 <div id="text">
     <ul>
-        <li><button class="mat-btn" id="right0" (click)="drawLine()">{{right[0]}}</button></li>
-        <li><button class="mat-btn" id="right1" (click)="drawLine()">{{right[1]}}</button></li>
-        <li><button class="mat-btn" id="right2" (click)="drawLine()">{{right[2]}}</button></li>
-        <li><button class="mat-btn" id="right3" (click)="drawLine()">{{right[3]}}</button></li>
-        <li><button class="mat-btn" id="right4" (click)="drawLine()">{{right[4]}}</button></li>
-        <li><button class="mat-btn" id="right5" (click)="drawLine()">{{right[5]}}</button></li>
-        <li><button class="mat-btn" id="right6" (click)="drawLine()">{{right[6]}}</button></li>
-        <li><button class="mat-btn" id="right7" (click)="drawLine()">{{right[7]}}</button></li>
-        <li><button class="mat-btn" id="right8" (click)="drawLine()">{{right[8]}}</button></li>
-        <li><button class="mat-btn" id="right9" (click)="drawLine()">{{right[9]}}</button></li>
+        <li *ngFor="let btn of right"><button (click) = "drawLine()" class="mat-btn">{{btn}}</button></li>
     </ul>
 </div>
+
