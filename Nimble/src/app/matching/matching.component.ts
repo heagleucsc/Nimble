@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICONS } from '../../assets/matching/icons';
 
 @Component({
   selector: 'app-matching',
@@ -8,17 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class MatchingComponent implements OnInit {
 
   imgFolder: string = "../../assets/matching/imgs/";
-  answers: {[key: string]: string};
   left:string[] = ["", "", "", "", "", "", "", "", "", ""];
   right:string[] = ["", "", "", "", "", "", "", "", "", ""];
   leftSelected:number;
   rightSelected:number;
-  isRight:boolean;
+  isCorrect:boolean;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.initiailizeEverything();
+  }
+
+  initiailizeEverything(): void {
     this.initializeLeft(this.left);
     this.initializeRight(this.right);
     this.leftSelected= -1;
@@ -27,7 +31,7 @@ export class MatchingComponent implements OnInit {
 
   initializeLeft(left:string[]): void {
     for (let i in left) {
-      left[i] = `${this.imgFolder}mag.png`;
+      left[i] = `${this.imgFolder}icon_mag.png`;
     }
   }
 
@@ -40,21 +44,24 @@ export class MatchingComponent implements OnInit {
   selectLeft(index:number): void {
     this.leftSelected = index;
     if (this.rightSelected != -1)
-      this.isRight = this.evalAnswer(this.leftSelected, this.rightSelected);
+      this.evalAnswer(this.leftSelected, this.rightSelected);
   }
 
   selectRight(index:number): void {
     this.rightSelected = index;
     if (this.leftSelected != -1)
-      this.isRight = this.evalAnswer(this.leftSelected, this.rightSelected);
+      this.evalAnswer(this.leftSelected, this.rightSelected);
   }
 
-  evalAnswer(idxL:number, idxR:number): boolean {
-    let result:boolean = this.answers[idxL] == this.right[idxR];
-    
-    
+  evalAnswer(idxL:number, idxR:number): void {
+    this.isCorrect = ICONS[idxL] == this.right[idxR];
 
-    return result;
+    if (this.isCorrect) {
+
+    } else {
+
+    }
+    this.initiailizeEverything();
   }
 
   drawLine() {
