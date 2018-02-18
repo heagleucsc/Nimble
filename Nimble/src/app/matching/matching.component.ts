@@ -67,9 +67,11 @@ export class MatchingComponent implements OnInit {
 	  var t2 = test2.getBoundingClientRect();
 	  
 	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+	  //canvas.width = t2.left+61;
+	  //canvas.height = 340px;
 	  var ctx = canvas.getContext("2d");
 	  ctx.beginPath();
-	  ctx.moveTo(0, 0);
+	  ctx.moveTo(0, 20);
 	  ctx.lineTo(canvas.width, 20);
 	  ctx.stroke();
 	  console.log("Button Pushed!");
