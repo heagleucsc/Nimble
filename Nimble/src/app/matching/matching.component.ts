@@ -31,7 +31,7 @@ export class MatchingComponent implements OnInit {
 
   initializeLeft(left:string[]): void {
     for (let i in left) {
-      left[i] = `${this.imgFolder}icon_mag.png`;
+      left[i] = `${this.imgFolder}icon_add.png`;
     }
   }
 
@@ -42,15 +42,23 @@ export class MatchingComponent implements OnInit {
   }
 
   selectLeft(index:number): void {
+	console.log(index);
     this.leftSelected = index;
-    if (this.rightSelected != -1)
+    if (this.rightSelected != -1){
+	  console.log("Line should be drawn");
+	  this.drawLine(this.leftSelected, this.rightSelected);
       this.evalAnswer(this.leftSelected, this.rightSelected);
+	}
   }
 
   selectRight(index:number): void {
+	console.log(index);
     this.rightSelected = index;
-    if (this.leftSelected != -1)
+    if (this.leftSelected != -1){
+	  console.log("Line should be drawn");
+	  this.drawLine(this.leftSelected, this.rightSelected);
       this.evalAnswer(this.leftSelected, this.rightSelected);
+	}
   }
 
   evalAnswer(idxL:number, idxR:number): void {
@@ -64,8 +72,10 @@ export class MatchingComponent implements OnInit {
     this.initiailizeEverything();
   }
 
-  drawLine() {
-    this.initializeLeft(this.left);
+  drawLine(indexLeft:number, indexRight:number) {
+	  console.log(indexLeft);
+	  var leftY = 20 + indexLeft*20;
+	  var rightY = 20 + indexRight*20;
 	  //var icon = a.getBoundingClientRect();
 	  //var term = b.getBoundingClientRect();
 	  var test1 = document.getElementById("img");
@@ -78,18 +88,11 @@ export class MatchingComponent implements OnInit {
 	  //canvas.height = 340px;
 	  var ctx = canvas.getContext("2d");
 	  ctx.beginPath();
-	  ctx.moveTo(0, 20);
-	  ctx.lineTo(canvas.width, 20);
+	  ctx.moveTo(0, leftY);
+	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
 	  console.log("Button Pushed!");
 	  console.log(t1.left);
 	  console.log(t1.bottom);
-  }
-  
-  clickLeft(){
-	  console.log("Left Button Pushed!");
-  }
-  clickRight(){
-	  console.log("Right Button Pushed!");
   }
 }
