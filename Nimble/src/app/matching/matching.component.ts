@@ -7,12 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchingComponent implements OnInit {
 
-<<<<<<< HEAD
-//  imgFolder: string = "../../assets/matching/imgs/";
-//  left:string[10] = ["", "", "", "", "", "", "", "", "", ""];
-//  right:string[10] = ["", "", "", "", "", "", "", "", "", ""];
-
-=======
   imgFolder: string = "../../assets/matching/imgs/";
   answers: {[key: string]: string};
   left:string[] = ["", "", "", "", "", "", "", "", "", ""];
@@ -20,31 +14,22 @@ export class MatchingComponent implements OnInit {
   leftSelected:number;
   rightSelected:number;
   isRight:boolean;
->>>>>>> 02af3b23b148cd0a97c8d069d727ef548dcc87b2
 
   constructor() {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
-    var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-    var cdiv = document.getElementById("cdiv");
-    // canvas.width = cdiv.clientWidth/4;
-    // canvas.height = cdiv.clientHeight;
-    this.drawLine();
-  }
-
-//  initializeLeft(left:string[]): void {
-//    for (img in left) {
-//      img = `${this.imgFolder}mag.png`;
-//      console.log(img);
-//    }
-//  }
-=======
     this.initializeLeft(this.left);
     this.initializeRight(this.right);
     this.leftSelected= -1;
     this.rightSelected= -1;
+    var img = document.getElementById("img");
+    var text = document.getElementById("text");
+    var imgbox = img.getBoundingClientRect();
+    var textbox = text.getBoundingClientRect();
+    var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+    canvas.width = textbox.left - imgbox.right - 92;
+    canvas.height = 344px;
   }
 
   initializeLeft(left:string[]): void {
@@ -58,7 +43,6 @@ export class MatchingComponent implements OnInit {
       right[i] = `[placeholder]`;
     }
   }
->>>>>>> 02af3b23b148cd0a97c8d069d727ef548dcc87b2
 
   selectLeft(index:number): void {
     this.leftSelected = index;
@@ -84,30 +68,14 @@ export class MatchingComponent implements OnInit {
 //    this.initializeLeft(this.left);
 	  //var icon = a.getBoundingClientRect();
 	  //var term = b.getBoundingClientRect();
-<<<<<<< HEAD
-	  var img = document.getElementById("img");
-    var text = document.getElementById("text");
-
-	  var imgCoord = img.getBoundingClientRect();
-    var textCoord = img.getBoundingClientRect();
-	  // console.log(t.left);
-    var c = <HTMLCanvasElement> document.getElementById("myCanvas");
-    c.width = textCoord.left + 61;
-    c.height = 340px;
-    var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.moveTo(0,0);
-    ctx.lineTo(1000,1000);
-    ctx.stroke();
-=======
 	  var test1 = document.getElementById("img");
 	  var test2 = document.getElementById("text");
 	  var t1 = test1.getBoundingClientRect();
 	  var t2 = test2.getBoundingClientRect();
 	  
 	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-	  //canvas.width = t2.left+61;
-	  //canvas.height = 340px;
+	  // canvas.width = t2.left;
+	  // canvas.height = 340px;
 	  var ctx = canvas.getContext("2d");
 	  ctx.beginPath();
 	  ctx.moveTo(0, 20);
@@ -116,6 +84,5 @@ export class MatchingComponent implements OnInit {
 	  console.log("Button Pushed!");
 	  console.log(t1.left);
 	  console.log(t1.bottom);
->>>>>>> 02af3b23b148cd0a97c8d069d727ef548dcc87b2
   }
 }
