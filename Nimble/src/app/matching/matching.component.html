@@ -2,10 +2,14 @@
 
 
 <div id="img">
-    <input type="image" src="../../assets/mag.png" name="mat-btn" class="buttonImg" id="matbut" >
- </div>
+    <ul>
+        <li *ngFor="let img of left"><input type="image" src="{{img}}" class="buttonImg"></li>
+    </ul>
+</div>
   
 <div id="text">
-    <button (click)="drawLine()" class="mat-btn">Search</button>
-  </div>
-  
+    <ul>
+        <li *ngFor="let btn of right"><button (click) = "drawLine()" class="mat-btn">{{btn}}</button></li>
+    </ul>
+</div>
+

@@ -7,12 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchingComponent implements OnInit {
 
-  constructor() { }
+  imgFolder: string = "../../assets/matching/imgs/";
+  left:string[] = ["", "", "", "", "", "", "", "", "", ""];
+  right:string[] = ["", "", "", "", "", "", "", "", "", ""];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.initializeLeft(this.left);
+    this.initializeRight(this.right);
   }
-  
-  drawLine(){
+
+  initializeLeft(left:string[]): void {
+    for (let i in left) {
+      left[i] = `${this.imgFolder}mag.png`;
+    }
+  }
+
+  initializeRight(right:string[]): void {
+    for (let i in right) {
+      right[i] = `[placeholder]`;
+    }
+  }
+
+  drawLine() {
+    this.initializeLeft(this.left);
 	  //var icon = a.getBoundingClientRect();
 	  //var term = b.getBoundingClientRect();
 	  var test1 = document.getElementById("img");
@@ -31,5 +51,3 @@ export class MatchingComponent implements OnInit {
 	  console.log(t1.bottom);
   }
 }
-
-
