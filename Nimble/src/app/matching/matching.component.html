@@ -1,3 +1,6 @@
+<canvas id="myCanvas" ></canvas>
+
+
 <div id="img">
     <ul>
         <li *ngFor="let img of left; let i = index"><input type="image" src="{{img}}" class="buttonImg"></li>
@@ -6,6 +9,7 @@
   
 <div id="text">
     <ul>
-        <li *ngFor="let btn of right; let i = index"><button class="mat-btn">{{btn}}</button></li>
+        <li *ngFor="let btn of right"><button (click) = "drawLine()" class="mat-btn">{{btn}}</button></li>
     </ul>
 </div>
+
