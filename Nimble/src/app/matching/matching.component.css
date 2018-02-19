@@ -16,6 +16,7 @@ li {
 
 #text {
   float: right;
+  margin-top: 2px;
 }
 
 #myCanvas {

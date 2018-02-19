@@ -19,33 +19,44 @@ export class MatchingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initiailizeEverything();
+    this.initializeArrays(this.left, this.right);
+    this.initializeSelections();
+    let img = document.getElementById("img");
+    let text = document.getElementById("text");
+    let imgbox = img.getBoundingClientRect();
+    let textbox = text.getBoundingClientRect();
+    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+    canvas.width = textbox.left - imgbox.right - 92;
+    canvas.height = 344;
   }
 
-  initiailizeEverything(): void {
-    this.initializeLeft(this.left);
-    this.initializeRight(this.right);
+  initializeSelections(): void {
     this.leftSelected= -1;
     this.rightSelected= -1;
-    var img = document.getElementById("img");
-    var text = document.getElementById("text");
-    var imgbox = img.getBoundingClientRect();
-    var textbox = text.getBoundingClientRect();
-    var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-    canvas.width = textbox.left - imgbox.right - 92;
-    canvas.height = 344px;
   }
 
-  initializeLeft(left:string[]): void {
+  initializeArrays(left:string[], right:string[]): void {
     for (let i in left) {
-      left[i] = `${this.imgFolder}icon_add.png`;
+      let currIcon:string = "";
+      let randIcon:string;
+      let modIconStr:string;
+
+      while (currIcon == "") {
+        console.log("attmepting icon select!");
+        randIcon = this.randomIcon();
+        modIconStr = `${this.imgFolder}${randIcon}`;
+
+        if (!left.includes(modIconStr)) currIcon = randIcon;
+      }
+
+      left[i] = modIconStr;
+      right[i] = ICONS[currIcon];
     }
   }
 
-  initializeRight(right:string[]): void {
-    for (let i in right) {
-      right[i] = `[placeholder]`;
-    }
+  randomIcon(): string {
+    var keys = Object.keys(ICONS);
+    return keys[keys.length * Math.random() << 0];
   }
 
   selectLeft(index:number): void {
@@ -55,7 +66,7 @@ export class MatchingComponent implements OnInit {
 	  console.log("Line should be drawn");
 	  this.drawLine(this.leftSelected, this.rightSelected);
       this.evalAnswer(this.leftSelected, this.rightSelected);
-	}
+	  }
   }
 
   selectRight(index:number): void {
@@ -65,7 +76,7 @@ export class MatchingComponent implements OnInit {
 	  console.log("Line should be drawn");
 	  this.drawLine(this.leftSelected, this.rightSelected);
       this.evalAnswer(this.leftSelected, this.rightSelected);
-	}
+	  }
   }
 
   evalAnswer(idxL:number, idxR:number): void {
@@ -76,30 +87,20 @@ export class MatchingComponent implements OnInit {
     } else {
 
     }
-    this.initiailizeEverything();
+    this.initializeSelections();
   }
 
   drawLine(indexLeft:number, indexRight:number) {
 	  console.log(indexLeft);
-	  var leftY = 20 + indexLeft*20;
-	  var rightY = 20 + indexRight*20;
-	  //var icon = a.getBoundingClientRect();
-	  //var term = b.getBoundingClientRect();
-	  var test1 = document.getElementById("img");
-	  var test2 = document.getElementById("text");
-	  var t1 = test1.getBoundingClientRect();
-	  var t2 = test2.getBoundingClientRect();
+	  var leftY = 20 + indexLeft*34;
+	  var rightY = 21 + indexRight*34;
 	  
 	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-	  // canvas.width = t2.left;
-	  // canvas.height = 340px;
 	  var ctx = canvas.getContext("2d");
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
 	  console.log("Button Pushed!");
-	  console.log(t1.left);
-	  console.log(t1.bottom);
   }
 }
