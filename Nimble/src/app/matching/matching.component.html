@@ -1,6 +1,6 @@
 <div id="img">
     <ul>
-        <li *ngFor="let img of left; let i = index"><input (click) = "selectLeft(i)" type="image" src="{{img}}" class="buttonImg"></li>
+        <li *ngFor="let img of left; let i = index"><input (click) = "selectLeft(i)" type="image" src="{{imgFolder}}{{img}}" class="buttonImg"></li>
     </ul>
 </div>
 

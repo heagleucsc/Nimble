@@ -39,19 +39,18 @@ export class MatchingComponent implements OnInit {
     for (let i in left) {
       let currIcon:string = "";
       let randIcon:string;
-      let modIconStr:string;
 
       while (currIcon == "") {
-        console.log("attmepting icon select!");
         randIcon = this.randomIcon();
-        modIconStr = `${this.imgFolder}${randIcon}`;
 
-        if (!left.includes(modIconStr)) currIcon = randIcon;
+        if (!left.includes(randIcon)) currIcon = randIcon;
       }
 
-      left[i] = modIconStr;
+      left[i] = randIcon;
       right[i] = ICONS[currIcon];
     }
+    this.shuffle(left);
+    this.shuffle(right);
   }
 
   randomIcon(): string {
@@ -59,48 +58,54 @@ export class MatchingComponent implements OnInit {
     return keys[keys.length * Math.random() << 0];
   }
 
+  // function taken from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+  shuffle(a:string[]): void {
+    let j:number;
+    let x:string;
+    let i:number;
+
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+}
+
   selectLeft(index:number): void {
-	console.log(index);
     this.leftSelected = index;
     if (this.rightSelected != -1){
-	  console.log("Line should be drawn");
-	  this.drawLine(this.leftSelected, this.rightSelected);
-      this.evalAnswer(this.leftSelected, this.rightSelected);
+    this.evalAnswer(this.leftSelected, this.rightSelected);
 	  }
   }
 
   selectRight(index:number): void {
-	console.log(index);
     this.rightSelected = index;
     if (this.leftSelected != -1){
-	  console.log("Line should be drawn");
-	  this.drawLine(this.leftSelected, this.rightSelected);
-      this.evalAnswer(this.leftSelected, this.rightSelected);
+    this.evalAnswer(this.leftSelected, this.rightSelected);
 	  }
   }
 
   evalAnswer(idxL:number, idxR:number): void {
-    this.isCorrect = ICONS[idxL] == this.right[idxR];
+    let iconKey:string = this.left[idxL];
+    this.isCorrect = ICONS[iconKey] == this.right[idxR];
 
-    if (this.isCorrect) {
-
-    } else {
-
-    }
+    this.drawLine(this.leftSelected, this.rightSelected, this.isCorrect);
     this.initializeSelections();
   }
 
-  drawLine(indexLeft:number, indexRight:number) {
-	  console.log(indexLeft);
+  drawLine(indexLeft:number, indexRight:number, isCorrect:boolean) {
 	  var leftY = 20 + indexLeft*34;
 	  var rightY = 21 + indexRight*34;
 	  
 	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  var ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = isCorrect ? "#00FF00" : "#FF0000";
+
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
-	  console.log("Button Pushed!");
   }
 }
