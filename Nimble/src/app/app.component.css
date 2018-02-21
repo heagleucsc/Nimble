@@ -22,7 +22,15 @@ body {
   text-align: left;
   font-weight: lighter;
   font-size: 26px !important;
-  border: none; 
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.4s ease;
+}
+
+.nav-btn:hover {
+  color: black;
+  background-color: white;
+  transition: 0.4s ease;
 }
 
 .nav-btn-cur {

@@ -10,6 +10,8 @@
 .container {
   /* text inside card under image */
     padding: 2px 16px;
+    background-color: #FBDCA8;
+    color: black;
 }
 
 img.resize {
@@ -23,5 +25,6 @@ img.resize {
   font-size: large;
   font-weight: bold;
   right: 5px;
+  margin-top: 15px;
   background-color: white;
 }
