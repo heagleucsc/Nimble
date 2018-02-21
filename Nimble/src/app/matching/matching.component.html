@@ -1,6 +1,6 @@
 <div id="img">
     <ul>
-        <li *ngFor="let img of left; let i = index"><input (click) = "selectLeft(i)" type="image" src="{{imgFolder}}{{img}}" class="buttonImg"></li>
+        <li *ngFor="let img of left; let i = index"><input (click) = "select(i, 'left', 'right')" type="image" src="{{imgDir}}{{img}}" class="buttonImg" [ngClass]="{'active' : i === leftSelected}"></li>
     </ul>
 </div>
 
@@ -11,6 +11,6 @@
 
 <div id="text">
     <ul>
-        <li *ngFor="let btn of right; let i = index"><button (click) = "selectRight(i)" class="mat-btn">{{btn}}</button></li>
+        <li *ngFor="let btn of right; let i = index"><button (click) = "select(i, 'right', 'left')" class="mat-btn" [ngClass]="{'active' : i === rightSelected}">{{btn}}</button></li>
     </ul>
 </div>

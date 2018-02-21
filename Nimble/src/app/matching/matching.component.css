@@ -23,6 +23,11 @@ li {
   float: left;
 }
 
+.active {
+  outline: 2px solid coral;
+  transition: 0.1s ease;
+}
+
 .buttonImg {
   height: 30px;
   border: 1px solid #000000;
@@ -43,4 +48,5 @@ li {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border: 1px solid #000000;
   border-radius: 2px;
+  transition: 0.1s ease;
 }
