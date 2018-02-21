@@ -10,6 +10,29 @@ li {
   margin-bottom: 4px;
 }
 
+#cmp {
+  display: block;
+  margin: 0 auto;
+}
+
+#nav-btn-again {
+  float: left;
+  background-color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#nav-btn-next {
+  float: right;
+  background-color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 #img {
   float: left;
 }
@@ -29,7 +52,8 @@ li {
 }
 
 .buttonImg {
-  height: 30px;
+  max-height: 30px;
+  max-width: 30px;
   border: 1px solid #000000;
   border-radius: 2px;
   transition: 0.1s ease;
@@ -40,7 +64,7 @@ li {
   background: #666;
   color: white;
   height: 30px;
-  width: 60px;
+  width: 135px;
   text-align: left;
   font-family: "Open Sans";
   font-weight: lighter;

@@ -13,21 +13,23 @@ export class MatchingComponent implements OnInit {
   right:string[] = ["", "", "", "", "", "", "", "", "", ""];
   leftSelected:number = -1;
   rightSelected:number = -1;
+  numCorrect:number = 0;
+  isCompleted:boolean = false;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.initSelections();
-    this.initArrays();
+    this.restartQuiz();
 
+    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
     let img = document.getElementById("img");
     let text = document.getElementById("text");
+
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
-    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 
-    canvas.width = textbox.left - imgbox.right - 92;
+    canvas.width = textbox.left - imgbox.right - 167;
     canvas.height = 344;
   }
 
@@ -36,6 +38,8 @@ export class MatchingComponent implements OnInit {
   }
 
   initArrays(): void {
+    this.numCorrect = 0;
+
     for (let i in this.left) {
       let currIcon:string = "";
       let randIcon:string;
@@ -82,6 +86,8 @@ export class MatchingComponent implements OnInit {
     let iconKey:string = this.left[idxL];
     let isCorrect = ICONS[iconKey] === this.right[idxR];
 
+    if (isCorrect) this.numCorrect++;
+
     this.drawLine(this.leftSelected, this.rightSelected, isCorrect);
     this.initSelections();
   }
@@ -97,5 +103,9 @@ export class MatchingComponent implements OnInit {
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
+  }
+  restartQuiz(): void {
+    this.initSelections();
+    this.initArrays();
   }
 }
