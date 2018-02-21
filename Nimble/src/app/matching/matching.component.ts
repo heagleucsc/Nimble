@@ -29,7 +29,7 @@ export class MatchingComponent implements OnInit {
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
 
-    canvas.width = textbox.left - imgbox.right - 167;
+    canvas.width = textbox.left - imgbox.right - 228;
     canvas.height = 344;
   }
 
