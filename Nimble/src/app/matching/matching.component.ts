@@ -71,10 +71,11 @@ export class MatchingComponent implements OnInit {
   }
 
   select(idx:number, side:string, other:string): void {
-    this[`${side}Selected`] = idx;
-    if (this[`${other}Selected`] !== -1) {
+    let alreadySelected:boolean = this[`${side}Selected`] === idx
+    this[`${side}Selected`] = alreadySelected ? -1 : this[`${side}Selected`] = idx;
+
+    if (this[`${other}Selected`] !== -1)
       this.evalAnswer(this.leftSelected, this.rightSelected);
-    }
   }
 
   evalAnswer(idxL:number, idxR:number): void {
