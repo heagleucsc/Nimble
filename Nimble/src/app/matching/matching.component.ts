@@ -13,7 +13,8 @@ export class MatchingComponent implements OnInit {
   right:string[] = ["", "", "", "", "", "", "", "", "", ""];
   leftSelected:number = -1;
   rightSelected:number = -1;
-  numCorrect:number = 0;
+  numWrong:number = 0;
+  numRight:number = 0;
   isCompleted:boolean = false;
 
   constructor() {
@@ -38,7 +39,7 @@ export class MatchingComponent implements OnInit {
   }
 
   initArrays(): void {
-    this.numCorrect = 0;
+    this.numWrong = 0;
 
     for (let i in this.left) {
       let currIcon:string = "";
@@ -86,19 +87,21 @@ export class MatchingComponent implements OnInit {
     let iconKey:string = this.left[idxL];
     let isCorrect = ICONS[iconKey] === this.right[idxR];
 
-    if (isCorrect) this.numCorrect++;
+    if (isCorrect) {
+      this.drawLine(this.leftSelected, this.rightSelected);
+      this.numRight++;
+    } else this.numWrong++;
 
-    this.drawLine(this.leftSelected, this.rightSelected, isCorrect);
     this.initSelections();
   }
 
-  drawLine(indexLeft:number, indexRight:number, isCorrect:boolean) {
+  drawLine(indexLeft:number, indexRight:number) {
 	  let leftY = 20 + indexLeft * 34;
 	  let rightY = 21 + indexRight * 34;
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  let ctx = canvas.getContext("2d");
 
-    ctx.strokeStyle = isCorrect ? "#00FF00" : "#FF0000";
+    ctx.strokeStyle = "#00FF00";
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
@@ -107,5 +110,10 @@ export class MatchingComponent implements OnInit {
   restartQuiz(): void {
     this.initSelections();
     this.initArrays();
+    this.numWrong = this.numRight = 0;
+
+    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 }

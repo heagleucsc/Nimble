@@ -15,8 +15,8 @@
     </ul>
 </div>
 
-<div id="comp" *ngIf="isCompleted">
-    <h1>{{numCorrect}}/10</h1>
+<div id="comp" *ngIf="numRight === 10">
+    <h1>{{10 - numWrong}}/10</h1>
     <button id="nav-btn-again" (click)="restartQuiz()">Try Again?<i class="material-icons md-48 nav-icon">replay</i></button>
     <button id="nav-btn-next">Next Section<i class="material-icons md-48 nav-icon">play_arrow</i></button>
 </div>
