@@ -10,17 +10,23 @@
   <hr color="#F7BE5F" size="6">  <!-- yellow divider -->
 
   <div id="sidebar">
-    <button class="nav-btn nav-btn-cur">1. Introduction</button>
+    <button class="nav-btn"
+    [ngClass]="{'nav-btn-cur' : appStatus.isIntro}"
+    (click)="setStatus('isIntro')">1. Introduction</button>
     <button class="nav-btn">2. Warm up</button>
-    <button class="nav-btn">3. Terminology</button>
-    <button class="nav-btn">4. Icons</button>
+    <button class="nav-btn"
+    [ngClass]="{'nav-btn-cur' : appStatus.isFlash}"
+    (click)="setStatus('isFlash')">3. Terminology</button>
+    <button class="nav-btn"
+    [ngClass]="{'nav-btn-cur' : appStatus.isMatch}"
+    (click)="setStatus('isMatch')">4. Icons</button>
     <button class="nav-btn">5. Review</button>
   </div>
 
   <body>
-     <app-intro-nimble></app-intro-nimble>
-     <app-flashcard></app-flashcard>
-    <app-matching></app-matching>
+    <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
+    <app-flashcard *ngIf="appStatus.isFlash"></app-flashcard>
+    <app-matching *ngIf="appStatus.isMatch"></app-matching>
      <!-- <app-intro-icons></app-intro-icons> -->
      <!-- <app-intro-terminology></app-intro-terminology> -->
   </body>

@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Nimble';
+  appStatus = {
+      isIntro: true,
+      isFlash: false,
+      isMatch: false
+  }
+
+  setStatus(status: string): void {
+      Object.keys(this.appStatus).forEach(s => this.appStatus[s] = false);
+      this.appStatus[status] = true;
+  }
 }
