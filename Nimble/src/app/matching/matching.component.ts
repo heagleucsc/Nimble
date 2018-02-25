@@ -21,8 +21,11 @@ export class MatchingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.buildCanvas();
     this.restartQuiz();
+  }
 
+  buildCanvas(): void {
     let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
     let img = document.getElementById("img");
     let text = document.getElementById("text");

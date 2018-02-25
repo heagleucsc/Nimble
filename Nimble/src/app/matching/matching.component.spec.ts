@@ -22,14 +22,4 @@ describe('MatchingComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should size the canvas width correctly', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    const canvas = compiled.querySelector('canvas');
-    const img = compiled.querySelector('#img');
-    const text = compiled.querySelector('#text');
-    const imgbox = img.getBoundingClientRect();
-    const textbox = text.getBoundingClientRect();
-    const expectedWidth = textbox.left - imgbox.right;
-    expect(canvas.width).toEqual(expectedWidth);
-  }));
 });
