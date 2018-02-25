@@ -25,4 +25,10 @@ before_script:
 - npm install
 - ng build
 
+notifications:
+  email: false
+  slack: teamnimble183:rCGT8h8Y90FtX9rro5WXeHDF
+    on_success: change
+    on_failure: always
+
 script: karma start karma.conf.js --single-run
