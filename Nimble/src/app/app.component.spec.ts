@@ -34,4 +34,11 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button').textContent).toContain('help');
   }));
+  it('should only have 1 section active at a time', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const appStatus = fixture.debugElement.componentInstance.appStatus;
+    let numStatus = 0;
+    for (let key in appStatus) if (appStatus[key]) numStatus++;
+    expect(numStatus).toEqual(1);
+  }));
 });
