@@ -73,15 +73,8 @@ export class MatchingComponent implements OnInit {
   }
 
   drawLine(indexLeft:number, indexRight:number) {
-	  console.log(indexLeft);
 	  var leftY = 20 + indexLeft*20;
 	  var rightY = 20 + indexRight*20;
-	  //var icon = a.getBoundingClientRect();
-	  //var term = b.getBoundingClientRect();
-	  var test1 = document.getElementById("img");
-	  var test2 = document.getElementById("text");
-	  var t1 = test1.getBoundingClientRect();
-	  var t2 = test2.getBoundingClientRect();
 	  
 	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  //canvas.width = t2.left+61;
@@ -91,8 +84,5 @@ export class MatchingComponent implements OnInit {
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
-	  console.log("Button Pushed!");
-	  console.log(t1.left);
-	  console.log(t1.bottom);
   }
 }
