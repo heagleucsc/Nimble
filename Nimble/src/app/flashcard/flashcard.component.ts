@@ -87,7 +87,7 @@ export class FlashcardComponent implements OnInit {
 	}
 	
 	backcard(): void {
-  	this.index = (this.index - 1) % this.total_cards;
+  	this.index = (this.index - 1 + this.total_cards) % this.total_cards;
   	document.getElementById("term").innerHTML = "Term: " + this.keyword[this.index][0];
   	document.getElementById("definition").innerHTML = "Definition: " + this.keyword[this.index][1];
   }
