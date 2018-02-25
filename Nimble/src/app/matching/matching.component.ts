@@ -8,81 +8,114 @@ import { ICONS } from '../../assets/matching/icons';
 })
 export class MatchingComponent implements OnInit {
 
-  imgFolder: string = "../../assets/matching/imgs/";
+  imgDir: string = "../../assets/matching/imgs/";
   left:string[] = ["", "", "", "", "", "", "", "", "", ""];
   right:string[] = ["", "", "", "", "", "", "", "", "", ""];
-  leftSelected:number;
-  rightSelected:number;
-  isCorrect:boolean;
+  leftSelected:number = -1;
+  rightSelected:number = -1;
+  numWrong:number = 0;
+  numRight:number = 0;
+  isCompleted:boolean = false;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.initiailizeEverything();
+    this.restartQuiz();
+
+    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+    let img = document.getElementById("img");
+    let text = document.getElementById("text");
+
+    let imgbox = img.getBoundingClientRect();
+    let textbox = text.getBoundingClientRect();
+
+    canvas.width = textbox.left - imgbox.right - 228;
+    canvas.height = 344;
   }
 
-  initiailizeEverything(): void {
-    this.initializeLeft(this.left);
-    this.initializeRight(this.right);
-    this.leftSelected= -1;
-    this.rightSelected= -1;
+  initSelections(): void {
+    this.leftSelected = this.rightSelected = -1;
   }
 
-  initializeLeft(left:string[]): void {
-    for (let i in left) {
-      left[i] = `${this.imgFolder}icon_add.png`;
+  initArrays(): void {
+    this.numWrong = 0;
+
+    for (let i in this.left) {
+      let currIcon:string = "";
+      let randIcon:string;
+
+      while (currIcon == "")
+        if (!this.left.includes(randIcon = this.randomIcon()))
+          currIcon = randIcon;
+
+      this.left[i] = randIcon;
+      this.right[i] = ICONS[currIcon];
+    }
+    this.shuffle(this.left);
+    this.shuffle(this.right);
+  }
+
+  randomIcon(): string {
+    let keys = Object.keys(ICONS);
+    return keys[keys.length * Math.random() << 0];
+  }
+
+  // function taken from https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+  shuffle(arr:string[]): void {
+    let ran:number;
+    let ranVal:string;
+    let idx:number;
+
+    for (idx = arr.length - 1; idx > 0; idx--) {
+      ran = Math.floor(Math.random() * (idx + 1));
+      ranVal = arr[idx];
+      arr[idx] = arr[ran];
+      arr[ran] = ranVal;
     }
   }
 
-  initializeRight(right:string[]): void {
-    for (let i in right) {
-      right[i] = `[placeholder]`;
-    }
-  }
+  select(idx:number, side:string, other:string): void {
+    let alreadySelected:boolean = this[`${side}Selected`] === idx
+    this[`${side}Selected`] = alreadySelected ? -1 : this[`${side}Selected`] = idx;
 
-  selectLeft(index:number): void {
-	console.log(index);
-    this.leftSelected = index;
-    if (this.rightSelected != -1){
-	  console.log("Line should be drawn");
-	  this.drawLine(this.leftSelected, this.rightSelected);
+    if (this[`${other}Selected`] !== -1)
       this.evalAnswer(this.leftSelected, this.rightSelected);
-	}
-  }
-
-  selectRight(index:number): void {
-	console.log(index);
-    this.rightSelected = index;
-    if (this.leftSelected != -1){
-	  console.log("Line should be drawn");
-	  this.drawLine(this.leftSelected, this.rightSelected);
-      this.evalAnswer(this.leftSelected, this.rightSelected);
-	}
   }
 
   evalAnswer(idxL:number, idxR:number): void {
-    this.isCorrect = ICONS[idxL] == this.right[idxR];
+    let iconKey:string = this.left[idxL];
+    let isCorrect = ICONS[iconKey] === this.right[idxR];
 
-    if (this.isCorrect) {
+    if (isCorrect) {
+      this.drawLine(this.leftSelected, this.rightSelected);
+      this.numRight++;
+    } else this.numWrong++;
 
-    } else {
-
-    }
-    this.initiailizeEverything();
+    this.initSelections();
   }
 
   drawLine(indexLeft:number, indexRight:number) {
-	  var leftY = 20 + indexLeft*20;
-	  var rightY = 20 + indexRight*20;
-	  
-	  var canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-	  //canvas.width = t2.left+61;
-	  //canvas.height = 340px;
-	  var ctx = canvas.getContext("2d");
+
+	  let leftY = 20 + indexLeft * 34;
+	  let rightY = 21 + indexRight * 34;
+	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+	  let ctx = canvas.getContext("2d");
+
+      ctx.strokeStyle = "#00FF00";
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
+
+  }
+  restartQuiz(): void {
+    this.initSelections();
+    this.initArrays();
+    this.numWrong = this.numRight = 0;
+
+    let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 }

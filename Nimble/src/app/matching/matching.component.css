@@ -1,44 +1,77 @@
 ul {
   list-style-type: none;
   padding-left: 0px;
+  margin: 0px;
+}
+
+li {
+  height: 30px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#cmp {
+  display: block;
+  margin: 0 auto;
+}
+
+#nav-btn-again {
+  float: left;
+  background-color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#nav-btn-next {
+  float: right;
+  background-color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #img {
-    position: relative;
-    float: left;
+  float: left;
 }
 
 #text {
-    position: relative;
-    float: right;
-  
+  float: right;
+  margin-top: 2px;
 }
 
 #myCanvas {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 85%;
-	height: 85%;
-	
+  float: left;
+}
+
+.active {
+  outline: 2px solid coral;
+  transition: 0.1s ease;
 }
 
 .buttonImg {
-    height: 30px;
+  max-height: 30px;
+  max-width: 30px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  transition: 0.1s ease;
 }
 
 .mat-btn {
+  display: block;
   background: #666;
   color: white;
   height: 30px;
-  width: 60px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  width: 196px;
   text-align: left;
   font-family: "Open Sans";
   font-weight: lighter;
   font-size: 14px !important;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border: 1px solid #000000;
+  border-radius: 2px;
+  transition: 0.1s ease;
 }
