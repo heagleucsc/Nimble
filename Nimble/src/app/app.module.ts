@@ -8,6 +8,7 @@ import { FlashcardComponent } from './flashcard/flashcard.component';
 import { IntroIconsComponent } from './intro-icons/intro-icons.component';
 import { IntroNimbleComponent } from './intro-nimble/intro-nimble.component';
 import { IntroTerminologyComponent } from './intro-terminology/intro-terminology.component';
+import { PhoneComponent } from './phone/phone.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { IntroTerminologyComponent } from './intro-terminology/intro-terminology
     FlashcardComponent,
     IntroIconsComponent,
     IntroNimbleComponent,
-    IntroTerminologyComponent
+    IntroTerminologyComponent,
+    PhoneComponent
   ],
   imports: [
     BrowserModule

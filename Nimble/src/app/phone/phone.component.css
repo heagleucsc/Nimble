@@ -1,0 +1,11 @@
+//Phone styling based on example from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_device_smartphone
+.smartphone{
+	position: relative;
+	width: 360 px;
+	height: 640px;
+	margin: auto;
+	border: 16 px black solid;
+	border-top-width: 60px;
+	border-bottom-width: 60px;
+	border-radius: 36 px;
+	
