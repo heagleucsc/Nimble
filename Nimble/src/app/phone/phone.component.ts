@@ -12,4 +12,13 @@ export class PhoneComponent implements OnInit {
   ngOnInit() {
   }
 
+  goHome(){
+	console.log('Button pushed!');
+	let img = <HTMLImageElement>document.getElementById("screen");
+	img.src= "../../assets/phone/home.png";
+  }
+  
+  nextActivity(){
+  }
+
 }
