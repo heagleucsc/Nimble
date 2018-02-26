@@ -8,14 +8,17 @@ import { ICONS } from '../../assets/matching/icons';
 })
 export class MatchingComponent implements OnInit {
 
+  // path to prepend to imgs
   imgDir: string = "../../assets/matching/imgs/";
+  // values stored into the img/text divs
   left:string[] = ["", "", "", "", "", "", "", "", "", ""];
   right:string[] = ["", "", "", "", "", "", "", "", "", ""];
+  // selected imgs/texts
   leftSelected:number = -1;
   rightSelected:number = -1;
+  // number of wrong/right answers
   numWrong:number = 0;
   numRight:number = 0;
-  isCompleted:boolean = false;
 
   constructor() {
   }
