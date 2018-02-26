@@ -1,0 +1,54 @@
+.card {
+	font-family: "Open Sans";
+	text-align: left;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin:10px;
+    padding-bottom: 5px;
+}
+
+.card-header {
+	background-color: #ffbf80;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+	margin-bottom: 5px;
+}
+.card-title {
+	padding:10px;
+	padding-left: 25px;
+	color: white;
+}
+
+.card-content-left {
+	width: 60%;
+	padding: 15px;
+	display: inline-block;
+	padding-bottom: 20px;
+}
+
+.real-world-challenge {
+	margin: 25px;
+}
+
+.hint-toggle {
+	margin-left: 15px;
+	margin-bottom: 15px;
+	background-color: #cceeff;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+.hint-toggle:hover {
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+.hint-details {
+	background-color: #fff7e6;
+	padding: 5px;
+	margin-bottom: 5px;
+}
