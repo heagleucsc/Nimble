@@ -29,12 +29,12 @@ export class MatchingComponent implements OnInit {
     let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
     let img = document.getElementById("img");
     let text = document.getElementById("text");
-
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
 
+    // sets canvas width based on #text & #img positions and widths
     canvas.width = textbox.left - imgbox.right - 228;
-    canvas.height = 344;
+    canvas.height = 344; // height of img/text * 10 + margin/padding
   }
 
   initSelections(): void {
@@ -44,6 +44,7 @@ export class MatchingComponent implements OnInit {
   initArrays(): void {
     this.numWrong = 0;
 
+    // loop through arrays and set to unused icon
     for (let i in this.left) {
       let currIcon:string = "";
       let randIcon:string;
@@ -78,43 +79,54 @@ export class MatchingComponent implements OnInit {
     }
   }
 
+  // sets respective Selected to idx of clicked img/text
   select(idx:number, side:string, other:string): void {
-    let alreadySelected:boolean = this[`${side}Selected`] === idx
+    // check if idx is already selected, unselect if so
+    let alreadySelected:boolean = this[`${side}Selected`] === idx;
     this[`${side}Selected`] = alreadySelected ? -1 : this[`${side}Selected`] = idx;
 
+    // if other Selected is set, evaluate the answer
     if (this[`${other}Selected`] !== -1)
       this.evalAnswer(this.leftSelected, this.rightSelected);
   }
 
   evalAnswer(idxL:number, idxR:number): void {
-    let iconKey:string = this.left[idxL];
+    let iconKey:string = this.left[idxL]; // img value of selected text
+    // compare text value of selected icon and selected text value
     let isCorrect = ICONS[iconKey] === this.right[idxR];
 
+    // draw line and increment right if comparison is correct, increment wrong if not
     if (isCorrect) {
       this.drawLine(this.leftSelected, this.rightSelected);
       this.numRight++;
-    } else this.numWrong++;
+    } else if (this.numWrong < 10) this.numWrong++;
 
+    // reset Selecteds
     this.initSelections();
   }
 
-  drawLine(indexLeft:number, indexRight:number) {
-	  let leftY = 20 + indexLeft * 34;
-	  let rightY = 21 + indexRight * 34;
+  drawLine(indexLeft:number, indexRight:number): void {
+    // calculate Y value of line; 34 is height of img/text
+	  let leftY = 20 + indexLeft * 34; // position next to img
+	  let rightY = 21 + indexRight * 34; // position next to text
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  let ctx = canvas.getContext("2d");
 
+    // draw actual line
     ctx.strokeStyle = "#00FF00";
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
   }
+
+  // reset quiz on completion
   restartQuiz(): void {
     this.initSelections();
     this.initArrays();
     this.numWrong = this.numRight = 0;
 
+    // clear canvas of lines
     let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
