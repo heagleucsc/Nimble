@@ -1,5 +1,3 @@
-/* Citation: https://plnkr.co/edit/Y7hAyl02d5nhk2Rke3uO?p=preview from
-https://stackoverflow.com/questions/43544910/angular-2-click-to-show-and-hide */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailRwcComponent implements OnInit {
 
-  showHide1:Boolean;
-  showHide2:Boolean;
+  showHide1: Boolean;
+  showHide2: Boolean;
 
-  constructor() { 
-  	this.showHide1 = false;
-  	this.showHide2 = false;
+  constructor() {
+    this.showHide1 = false;
+    this.showHide2 = false;
   }
 
   ngOnInit() {
@@ -25,7 +23,7 @@ export class EmailRwcComponent implements OnInit {
   }
 
   toggleHint2() {
-  	this.showHide2 = !this.showHide2;
+    this.showHide2 = !this.showHide2;
   }
- 
+
 }

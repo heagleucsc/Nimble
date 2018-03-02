@@ -1,7 +1,6 @@
 .card {
 	font-family: "Open Sans";
 	text-align: left;
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin:10px;
     padding-bottom: 5px;
@@ -27,6 +26,7 @@
 
 .real-world-challenge {
 	margin: 25px;
+	margin-left: 40px;
 }
 
 .hint-toggle {
@@ -40,7 +40,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    cursor: pointer;
+	cursor: pointer;
+	outline: none;
 }
  
 .hint-toggle:hover {

@@ -1,22 +1,5 @@
-.red {
-  color: #ED1C24;
-}
-
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  /* text inside card under image */
-    padding: 2px 16px;
-    background-color: #FBDCA8;
-    color: black;
-}
-
-img.resize {
-  max-width:100%;
-  max-height:100%;
+#intro-image {
+  max-width: 100%;
 }
 
 #nav-btn-start {
@@ -27,4 +10,10 @@ img.resize {
   right: 5px;
   margin-top: 15px;
   background-color: white;
+  color: black;
+  outline: none;
+}
+
+.red {
+  color: #FE5F55;
 }
