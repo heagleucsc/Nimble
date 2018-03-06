@@ -1,0 +1,40 @@
+.card {
+	text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin:10px;
+}
+
+.card-header {
+    background-image: url('../../assets/background_pattern_light.png');
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.card-title {
+	padding:10px;
+	padding-left: 25px;
+	color:hsla(0, 0%, 0%, 0.85);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+th {
+    color: #83A4E0;
+}
+
+th, td {
+    padding: 15px 10px ;
+    text-align: left;
+}
+
+hr {
+  padding-top: 2px;
+  color: #f7be5f;
+  background-color: #f7be5f;
+  border: none;
+}
+
+h4 {
+    color:hsla(0, 0%, 0%, 0.80);
+}
