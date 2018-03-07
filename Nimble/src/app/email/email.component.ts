@@ -10,11 +10,11 @@ export class EmailComponent implements OnInit {
   source = "../../assets/email/imgs/";
 
 	keyword = [
-		["icon_add.png", "Hello"],
-		["icon_back.png", "Goodbye"],
-		["icon_battery.png", "Why"],
-		["icon_bookmark.png", "Long time no see"],
-		["icon_brightness.png", "thank you"]
+		["icon_attach.png", "Add an Attachment"],
+		["icon_compose.png", "Compose an Email"],
+		["icon_search.png", "Search"],
+		["icon_send.png", "Send"],
+		["icon_trash.png", "Delete"]
 	];
 
   index = 0;
