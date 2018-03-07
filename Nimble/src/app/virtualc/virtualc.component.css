@@ -1,0 +1,50 @@
+.flashcard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    text-overflow: clip;
+    width:600px;
+    height: 300px;
+  }
+
+  #back_butt {
+    display: inline-block;
+    position: absolute;
+    top: 200px;
+    Left: 50px;
+    background-color: #68c9d6;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 15px 32px;
+    cursor: pointer;
+  }
+
+  #flip_butt {
+    display: inline-block;
+    position: absolute;
+    top: 200px;
+    Left: 230px;
+    background-color: #68c9d6;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 15px 32px;
+    cursor: pointer;
+  }
+
+  #rotate_butt {
+  display: inline-block;
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  background-color: #68c9d6;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 15px 32px;
+  cursor: pointer;
+  }
