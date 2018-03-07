@@ -19,6 +19,8 @@ export class PhoneComponent implements OnInit {
   }
   
   nextActivity(){
+	let img = <HTMLImageElement>document.getElementById("screen");
+	img.src= "../../assets/phone/home.png";
   }
 
 }

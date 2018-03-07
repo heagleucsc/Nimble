@@ -21,6 +21,28 @@
   
 }
 
+.smartphone .content{
+	position: relative;
+}
+
+.home-screen{
+	position: absolute;
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+
+.apps-screen{
+	display: block;
+	vertical-align: left;
+}
+
+#next-btn{
+  width: 50px;
+  height: 25px;
+  position: relative;
+}
+
 
 /* The screen (or content) of the device */
 .smartphone #screen {
