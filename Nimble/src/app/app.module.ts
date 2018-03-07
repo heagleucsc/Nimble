@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { VirtualChallengesComponent } from './virtual-challenges/virtual-challenges.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VirtualChallengesComponent
   ],
   imports: [
     BrowserModule
