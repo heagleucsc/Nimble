@@ -1,0 +1,31 @@
+.card {
+	font-family: "Open Sans";
+	text-align: left;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin:10px;
+}
+
+.card-header {
+	background-color: #5291ff;
+	/*box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);*/
+}
+.card-title {
+	padding:10px;
+	padding-left: 25px;
+	color: white;
+}
+
+.card-content-left {
+	width: 60%;
+	padding: 15px;
+	display: inline-block;
+}
+
+.card-content-right {
+	padding-top: 25px;
+	padding-right: 25px;
+	float: right;
+	display: inline-block;
+
+}
