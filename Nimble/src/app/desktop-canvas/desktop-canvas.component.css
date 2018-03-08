@@ -1,0 +1,37 @@
+#bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+#desktopCanvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+
+#name {
+    top: 152.5px;
+}
+
+#pass {
+    top: 169.8px;
+}
+
+#set2 {
+    visibility: visible;
+}
+
+.input {
+	font: Myriad;
+	color: #cccccc;
+	font-size: 8px;
+	position: absolute;
+    height: 11px;
+    width: 66.5px;
+    left: 277px;
+    z-index: 5;
+	background-color: rgba(0,0,0,0.1);
+	border: none;
+}

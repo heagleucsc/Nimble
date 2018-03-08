@@ -12,6 +12,7 @@ import { EmailRwcComponent } from './email-rwc/email-rwc.component';
 import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
+import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { IntroEmailComponent } from './intro-email/intro-email.component';
     EmailRwcComponent,
     IconsTeachComponent,
     IntroGesturesComponent,
-    IntroEmailComponent
+    IntroEmailComponent,
+    DesktopCanvasComponent
   ],
   imports: [
     BrowserModule
