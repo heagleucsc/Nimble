@@ -15,6 +15,10 @@
     </ul>
 </div>
 
+<div id="wrong" *ngIf="wasWrong">
+  <p id="wrong-text">That was incorrect.  Please try again!</p>
+</div>
+
 <div id="comp" *ngIf="numRight === 10">
     <h1>{{10 - numWrong}}/10</h1>
     <button id="nav-btn-again" (click)="restartQuiz()">Try Again?<i class="material-icons md-48 nav-icon">replay</i></button>
