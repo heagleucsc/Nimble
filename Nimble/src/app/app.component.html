@@ -6,7 +6,7 @@
     <img id="text-logo" src="../assets/nimble_text_logo.png">
     <button id="nav-btn-help">Help <i class="material-icons md-48 nav-icon">help</i></button>
   </header>
-  
+
   <hr color="#F7BE5F" size="6">  <!-- yellow divider -->
 
   <div id="sidebar">
@@ -24,9 +24,10 @@
   </div>
 
   <body>
-    <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
+    <!-- <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble> -->
     <app-flashcard *ngIf="appStatus.isFlash"></app-flashcard>
     <app-matching *ngIf="appStatus.isMatch"></app-matching>
+    <app-desktop-canvas></app-desktop-canvas>
      <!-- <app-intro-icons></app-intro-icons> -->
      <!-- <app-intro-terminology></app-intro-terminology> -->
   </body>

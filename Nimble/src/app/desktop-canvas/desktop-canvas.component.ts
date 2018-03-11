@@ -6,15 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-canvas.component.css']
 })
 export class DesktopCanvasComponent implements OnInit {
-  
+    deskIter:number = 0;
+    deskImg:string = `../assets/desktop-canvas/${this.deskIter}.png`;
+
     constructor() { }
 
     ngOnInit() {
-    	var bg = <HTMLImageElement> document.getElementById('bg');
-	    var canvas = <HTMLCanvasElement> document.getElementById('desktopCanvas'),
-	        ctx = canvas.getContext('2d');
+    	let bg = <HTMLImageElement> document.getElementById('bg');
+	    let canvas = <HTMLCanvasElement> document.getElementById('desktopCanvas'),
+      ctx = canvas.getContext('2d');
+
 	    canvas.height = bg.height;
-		canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
+		  canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
 
 	    // ctx.beginPath();
 	    // ctx.moveTo(0, 0);
@@ -23,10 +26,13 @@ export class DesktopCanvasComponent implements OnInit {
     }
 
     nextImage() {
-    	var bg = <HTMLImageElement> document.getElementById('bg');
-    	var login = <HTMLImageElement> document.getElementById('login');
-    	bg.src = "../assets/blank-desktop.jpg";
-		login.parentNode.removeChild(login);
+      if (this.deskIter == 0) {
+    	  let login = <HTMLImageElement> document.getElementById('login');
+
+        login.parentNode.removeChild(login);
+      }
+
+      this.deskIter++;
     }
 
 }
