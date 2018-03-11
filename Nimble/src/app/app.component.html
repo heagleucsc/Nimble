@@ -33,6 +33,7 @@
     <app-intro-icons *ngIf="appStatus === 'Match'"></app-intro-icons>
     <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
     <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
+    <app-desktop-canvas *ngIf="appStatus === 'GestGame'"></app-desktop-canvas>
     <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
