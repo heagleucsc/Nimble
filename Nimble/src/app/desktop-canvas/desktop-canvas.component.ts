@@ -6,26 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-canvas.component.css']
 })
 export class DesktopCanvasComponent implements OnInit {
-<<<<<<< HEAD
-=======
 
     icons = false;
     files = false;
     folder = false;
->>>>>>> Base desktop interactions
-  
+
     constructor() { }
 
     ngOnInit() {
-    	var bg = <HTMLImageElement> document.getElementById('bg');
-	    var canvas = <HTMLCanvasElement> document.getElementById('desktopCanvas'),
+    	let bg = <HTMLImageElement> document.getElementById('bg');
+	    let canvas = <HTMLCanvasElement> document.getElementById('desktopCanvas'),
 	        ctx = canvas.getContext('2d');
 	    canvas.height = bg.height;
-<<<<<<< HEAD
-		canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
-=======
 		  canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
->>>>>>> Base desktop interactions
 
 	    // ctx.beginPath();
 	    // ctx.moveTo(0, 0);
@@ -36,11 +29,12 @@ export class DesktopCanvasComponent implements OnInit {
     nextImage() {
     	var bg = <HTMLImageElement> document.getElementById('bg');
     	var login = <HTMLImageElement> document.getElementById('login');
-<<<<<<< HEAD
-    	bg.src = "../assets/blank-desktop.jpg";
-		login.parentNode.removeChild(login);
-=======
-    	bg.src = "../assets/blankDesktop.png";
+    }
+
+    login() {
+    	let bg = <HTMLImageElement> document.getElementById('bg');
+    	let login = <HTMLImageElement> document.getElementById('login');
+    	bg.src = "../assets/desktop-canvas/macDesktop.png";
   		login.parentNode.removeChild(login);
       this.icons = true;
     }
@@ -51,7 +45,6 @@ export class DesktopCanvasComponent implements OnInit {
 
     openFolder() {
       this.folder = true;
->>>>>>> Base desktop interactions
     }
 
 }

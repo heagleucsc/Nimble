@@ -26,6 +26,7 @@
      (click)="setStatus('Mail')">5. E-Mail</button>
   </div>
 
+<<<<<<< HEAD
   <div id="app-body">
     <app-intro-nimble *ngIf="appStatus === 'Intro'"></app-intro-nimble>
     <app-intro-terminology *ngIf="appStatus === 'Flash'"></app-intro-terminology>
@@ -39,4 +40,14 @@
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>
   </div>
+=======
+  <body>
+    <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
+    <app-flashcard *ngIf="appStatus.isFlash"></app-flashcard>
+    <app-matching *ngIf="appStatus.isMatch"></app-matching>
+    <app-desktop-canvas></app-desktop-canvas>
+     <app-intro-icons></app-intro-icons>
+     <app-intro-terminology></app-intro-terminology>
+  </body>
+>>>>>>> initial desktop activity
 </div>

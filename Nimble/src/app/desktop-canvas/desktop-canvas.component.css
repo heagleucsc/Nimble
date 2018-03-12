@@ -25,28 +25,28 @@
 #files {
     position: absolute;
     top: 100px;
-    left: 130px;
+    left: 79px;
     z-index: 5;
 }
 
 #folder {
     position: absolute;
-    top: 171px;
+    top: 180px;
     left: 251px;
     z-index: 5;
 }
 
 #folderSelected {
     position: absolute;
-    top: 172px;
+    top: 180px;
     left: 251px;
     z-index: 5;
 }
 
 #file {
     position: absolute;
-    top: 149px;
-    left: 440px;
+    top: 177px;
+    left: 423px;
     z-index: 5;
 }
 
