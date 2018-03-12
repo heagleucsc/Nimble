@@ -1,19 +1,19 @@
-<img class="resize" id="bg" src="../assets/macLogin.png" height="600">
+<img class="resize" id="bg" src="../assets/desktop-canvas/macLogin.png" height="600">
 <canvas id="desktopCanvas"></canvas>
 <form id="login" onsubmit="return false">
 	<input type="text" placeholder=" Enter Password" class="input" id="pass"/>
-    <input type="submit" style="position: absolute; left: -9999px" (click)="nextImage()"/>
+    <input type="submit" style="position: absolute; left: -9999px" (click)="login()"/>
 </form>
 
 <div *ngIf="files">
-	<img class="resize" id="files" src="../assets/files.png" height="400">
-	<img class="resize" id="folder" src="../assets/folder.png" height="19.7" (click)="openFolder()">
+	<img class="resize" id="files" src="../assets/desktop-canvas/files.png" height="500">
+	<img class="resize" id="folder" src="../assets/desktop-canvas/folder.png" height="17.3" (click)="openFolder()">
 </div>
 <div *ngIf="folder">
-	<img class="resize" id="folderSelected" src="../assets/folderSelected.png" height="18.8">
-	<img class="resize" id="file" src="../assets/file.png" height="330">
+	<img class="resize" id="folderSelected" src="../assets/desktop-canvas/folderSelect.png" height="16.3">
+	<img class="resize" id="file" src="../assets/desktop-canvas/file.png" height="330">
 </div>
 
 <div id="icons" *ngIf="icons">
-	<img class="resize" id="finder" src="../assets/finder.png" height="50" (click)="openFinder()">
+	<img class="resize" id="finder" src="../assets/desktop-canvas/finder.png" height="50" (click)="openFinder()">
 </div>
