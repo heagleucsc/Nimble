@@ -22,4 +22,13 @@ describe('MatchingComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should populated both arrays on initArrays', () => {
+    const left = component.left;
+    const right = component.right;
+    component.initArrays();
+    const leftEmptyIdx = left.indexOf("");
+    const rightEmptyIdx = right.indexOf("");
+    expect(leftEmptyIdx).toEqual(-1);
+    expect(rightEmptyIdx).toEqual(-1);
+  });
 });
