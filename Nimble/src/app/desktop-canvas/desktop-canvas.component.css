@@ -11,26 +11,53 @@
     z-index: 3;
 }
 
-#name {
-    top: 152.5px;
-}
-
 #pass {
-    top: 169.8px;
+    top: 293.9px;
 }
 
-#set2 {
-    visibility: visible;
+#finder {
+    position: absolute;
+    top: 550px;
+    left: 250px;
+    z-index: 5;
+}
+
+#files {
+    position: absolute;
+    top: 100px;
+    left: 130px;
+    z-index: 5;
+}
+
+#folder {
+    position: absolute;
+    top: 171px;
+    left: 251px;
+    z-index: 5;
+}
+
+#folderSelected {
+    position: absolute;
+    top: 172px;
+    left: 251px;
+    z-index: 5;
+}
+
+#file {
+    position: absolute;
+    top: 149px;
+    left: 440px;
+    z-index: 5;
 }
 
 .input {
-	font: Myriad;
+	font: Helvetica Nuel;
 	color: #cccccc;
 	font-size: 8px;
 	position: absolute;
-    height: 11px;
-    width: 66.5px;
-    left: 277px;
+    height: 14px;
+    width: 83.4px;
+    left: 437.2px;
     z-index: 5;
 	background-color: rgba(0,0,0,0.1);
 	border: none;
