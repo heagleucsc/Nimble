@@ -30,8 +30,8 @@ export class MatchingComponent implements OnInit {
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
 
-    canvas.width = textbox.left - imgbox.right - 228;
-    canvas.height = 344;
+    canvas.width = textbox.left - imgbox.right - 258;
+    canvas.height = 644;
   }
 
   initSelections(): void {
@@ -96,12 +96,13 @@ export class MatchingComponent implements OnInit {
   }
 
   drawLine(indexLeft:number, indexRight:number) {
-	  let leftY = 20 + indexLeft * 34;
-	  let rightY = 21 + indexRight * 34;
+	  let leftY = 35 + indexLeft * 64;
+	  let rightY = 35 + indexRight * 64;
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  let ctx = canvas.getContext("2d");
 
-    ctx.strokeStyle = "#00FF00";
+    ctx.strokeStyle = "#lalala";
+    ctx.lineWidth = 3;
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);

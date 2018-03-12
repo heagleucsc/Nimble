@@ -27,8 +27,16 @@ h4 {
     color: rgba(0,0,0,0.6);
 }
 
-p, ol, b{
+p, ul, b, li{
     color: rgba(0,0,0,0.75);
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    padding: 8px;
 }
 
 .card-content-left {
@@ -40,10 +48,10 @@ p, ol, b{
     display: inline-block;
 }
 
-#introIcons {
+#introEmail {
     position: absolute;
     display: inline-block;
-    height: 250px;
+    height: 170px;
     right: 50px;
     top: 220px;
     padding: 10px;

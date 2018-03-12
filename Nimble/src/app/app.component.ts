@@ -10,7 +10,9 @@ export class AppComponent {
   appStatus = {
       isIntro: true,
       isFlash: false,
-      isMatch: false
+      isMatch: false,
+      isGest: false,
+      isMail: false
   }
 
   setStatus(status: string): void {

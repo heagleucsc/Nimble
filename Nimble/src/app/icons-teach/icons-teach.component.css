@@ -1,26 +1,30 @@
 .card {
+	position: relative;
 	text-align: left;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    margin:10px;
+	margin: 10px;
+    margin-top: 20px;
 }
 
 .card-header {
-    background-image: url('../../assets/background_pattern_light.png');
+	background-color: #69c9d6;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    background-image: url('../../assets/background_pattern_light.png');
+    box-sizing: border-box; /* puts border inside of div instead of around */
 }
 
 .card-title {
-	padding:10px;
-	padding-left: 25px;
-	color:hsla(0, 0%, 0%, 0.85);
+	padding:20px;
+	padding-left: 50px;
 }
 
 .card-content {
+    border-left: 6px solid #f7be5f;
     padding: 15px;
 }
 
 th {
-    color: #83A4E0;
+    color: #69c9d6;
 }
 
 th, td {
@@ -35,6 +39,14 @@ hr {
   border: none;
 }
 
+h1 {
+    color:rgba(0,0,0,0.80);
+}
+
 h4 {
-    color:hsla(0, 0%, 0%, 0.80);
+    color: rgba(0,0,0,0.60);
+}
+
+p{
+    color: rgba(0,0,0,0.8);
 }
