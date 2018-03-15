@@ -76,20 +76,20 @@ export class FlashcardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	document.getElementById("term").innerHTML = "Term: " + this.keyword[this.index][0];
-  	document.getElementById("definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML = this.keyword[this.index][0];
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
   }
 
   rotatecard(): void {
   	this.index = (this.index + 1) % this.total_cards;
-  	document.getElementById("term").innerHTML = "Term: " + this.keyword[this.index][0];
-  	document.getElementById("definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML = this.keyword[this.index][0];
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
 	}
 	
 	backcard(): void {
   	this.index = (this.index - 1) % this.total_cards;
-  	document.getElementById("term").innerHTML = "Term: " + this.keyword[this.index][0];
-  	document.getElementById("definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML = this.keyword[this.index][0];
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
   }
 
   flipcard(): void {
