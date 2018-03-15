@@ -39,9 +39,8 @@ export class MatchingComponent implements OnInit {
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
 
-    // sets canvas width based on #text & #img positions and widths
-    canvas.width = textbox.left - imgbox.right - 228;
-    canvas.height = 344; // height of img/text * 10 + margin/padding
+    canvas.width = textbox.left - imgbox.right - 258;
+    canvas.height = 644;
   }
 
   initSelections(): void {
@@ -128,15 +127,15 @@ export class MatchingComponent implements OnInit {
     this.initSelections();
   }
 
-  drawLine(indexLeft:number, indexRight:number): void {
-    // calculate Y value of line; 34 is height of img/text
-	  let leftY = 20 + indexLeft * 34; // position next to img
-	  let rightY = 21 + indexRight * 34; // position next to text
+  drawLine(indexLeft:number, indexRight:number) {
+	  let leftY = 35 + indexLeft * 64;
+	  let rightY = 35 + indexRight * 64;
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  let ctx = canvas.getContext("2d");
 
-    // draw actual line
-    ctx.strokeStyle = "#00FF00";
+    ctx.strokeStyle = "#lalala";
+    ctx.lineWidth = 3;
+
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
