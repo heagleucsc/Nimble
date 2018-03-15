@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VirtualcComponent implements OnInit {
   keyword = [
+    ["../../assets/virtualc/vc_info.png", "../../assets/virtualc/vc_info.png"], 
+    ["../../assets/virtualc/compose_info.png", "../../assets/virtualc/compose_info.png"],
     ["../../assets/virtualc/compose_gmail.png", "../../assets/virtualc/compose_c_gmail.png"],
     ["../../assets/virtualc/compose_apple.png", "../../assets/virtualc/compose_c_apple.png"],
     ["../../assets/virtualc/compose_m_apple.png", "../../assets/virtualc/compose_m_c_apple.png"],
-    ["../../assets/virtualc/compose_m_gmail.png", "../../assets/virtualc/compose_m_c_gmail.png"]
+    ["../../assets/virtualc/compose_m_gmail.png", "../../assets/virtualc/compose_m_c_gmail.png"],
+    ["../../assets/virtualc/attach_info.png", "../../assets/virtualc/attach_info.png"],
+    ["../../assets/virtualc/attach_gmail.png", "../../assets/virtualc/attach_c_gmail.png"],
+    ["../../assets/virtualc/attach_apple.png", "../../assets/virtualc/attach_c_apple.png"],
+    ["../../assets/virtualc/attach_m_apple.png", "../../assets/virtualc/attach_m_c_apple.png"],
+    ["../../assets/virtualc/attach_m_gmail.png", "../../assets/virtualc/attach_m_c_gmail.png"],
   ];
 
   index = 0;
