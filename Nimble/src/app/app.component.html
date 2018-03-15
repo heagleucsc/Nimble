@@ -27,16 +27,10 @@
   </div>
 
   <body>
-    <!-- <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble> -->
+    <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
     <app-intro-icons *ngIf="appStatus.isMatch"></app-intro-icons>
-    <app-icons-teach></app-icons-teach>
-    <!-- <app-matching ></app-matching> -->
     <app-intro-terminology *ngIf="appStatus.isFlash"></app-intro-terminology> 
-    <!-- <app-flashcard></app-flashcard> -->
     <app-intro-gestures *ngIf="appStatus.isGest"></app-intro-gestures>
-    <!-- <app-email-rwc></app-email-rwc> -->
     <app-intro-email *ngIf="appStatus.isMail"></app-intro-email>
-    <!-- <app-icons-teach-detailed></app-icons-teach-detailed> -->
-    <!-- <app-nimble-help></app-nimble-help> -->
   </body>
 </div>
