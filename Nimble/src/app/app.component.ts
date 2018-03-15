@@ -10,6 +10,27 @@ export class AppComponent {
   appStatus:string = "Intro";
   contStr:string = "Begin";
 
+  chkStatus(status: string): boolean {
+    switch(status) {
+      case "Intro": {
+        return this.appStatus === "Intro";
+      } case "Flash": {
+        return this.appStatus === "Flash" ||
+               this.appStatus === "FlashGame";
+      } case "Match": {
+        return this.appStatus === "Match" ||
+               this.appStatus === "MatchTeach" ||
+               this.appStatus === "MatchGame";
+      } case "Gest": {
+        return this.appStatus === "Gest" ||
+               this.appStatus === "GestGame";
+      } case "Mail": {
+        return this.appStatus === "Mail" ||
+               this.appStatus === "MailGame";
+      }
+    }
+  }
+
   setStatus(status: string): void {
       this.appStatus = status;
       this.contStr = this.appStatus === "Intro" ? "Begin" : "Continue";
@@ -27,6 +48,9 @@ export class AppComponent {
         this.appStatus = "Match";
       break;
       } case "Match": {
+        this.appStatus = "MatchTeach";
+      break;
+      } case "MatchTeach": {
         this.appStatus = "MatchGame";
       break;
       } case "MatchGame": {

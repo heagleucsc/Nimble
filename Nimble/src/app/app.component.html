@@ -10,19 +10,19 @@
 
   <div id="sidebar">
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Intro' || appStatus === 'IntroGame'}"
+     [ngClass]="{'nav-btn-cur' : chkStatus('Intro')}"
      (click)="setStatus('Intro')">1. Introduction</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Flash' || appStatus === 'FlashGame'}"
+     [ngClass]="{'nav-btn-cur' : chkStatus('Flash')}"
      (click)="setStatus('Flash')">2. Terminology</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Match' || appStatus === 'MatchGame'}"
+     [ngClass]="{'nav-btn-cur' : chkStatus('Match')}"
      (click)="setStatus('Match')">3. Icons</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Gest' || appStatus === 'GestGame'}"
+     [ngClass]="{'nav-btn-cur' : chkStatus('Gest')}"
      (click)="setStatus('Gest')">4. Essential Skills</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Mail' || appStatus === 'MailGame'}"
+     [ngClass]="{'nav-btn-cur' : chkStatus('Mail')}"
      (click)="setStatus('Mail')">5. E-Mail</button>
   </div>
 
@@ -31,6 +31,7 @@
     <app-intro-terminology *ngIf="appStatus === 'Flash'"></app-intro-terminology>
     <app-flashcard *ngIf="appStatus === 'FlashGame'"></app-flashcard>
     <app-intro-icons *ngIf="appStatus === 'Match'"></app-intro-icons>
+    <app-icons-teach *ngIf="appStatus === 'MatchTeach'"></app-icons-teach>
     <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
     <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
     <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>
