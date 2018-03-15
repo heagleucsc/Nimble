@@ -29,12 +29,8 @@
   <body>
     <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
     <app-intro-icons *ngIf="appStatus.isMatch"></app-intro-icons>
-    <!-- <app-icons-teach></app-icons-teach> -->
-    <!-- <app-matching *ngIf="appStatus.isMatch"></app-matching> -->
     <app-intro-terminology *ngIf="appStatus.isFlash"></app-intro-terminology>
-    <!-- <app-flashcard *ngIf="appStatus.isFlash"></app-flashcard> -->
     <app-intro-gestures *ngIf="appStatus.isGest"></app-intro-gestures>
-    <!-- <app-email-rwc></app-email-rwc> -->
     <app-intro-email *ngIf="appStatus.isMail"></app-intro-email>
   </body>
 </div>
