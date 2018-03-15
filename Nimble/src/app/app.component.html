@@ -1,11 +1,11 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 <div style="text-align:center;">
-  
+
   <header>
       <img id="text-logo" src="../assets/nimble_logo_transparent_80.png">
       <button id="nav-btn-help">Help <i class="material-icons md-18 nav-icon">help</i></button>
   </header>
-  
+
   <hr>  <!-- mustard yellow divider -->
 
   <div id="sidebar">
@@ -13,13 +13,13 @@
      [ngClass]="{'nav-btn-cur' : appStatus.isIntro}"
      (click)="setStatus('isIntro')">1. Introduction</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus.isFlash}" 
+     [ngClass]="{'nav-btn-cur' : appStatus.isFlash}"
      (click)="setStatus('isFlash')">2. Terminology</button>
     <button class="nav-btn"
      [ngClass]="{'nav-btn-cur' : appStatus.isMatch}"
      (click)="setStatus('isMatch')">3. Icons</button>
-    <button class="nav-btn" 
-     [ngClass]="{'nav-btn-cur' : appStatus.isGest}" 
+    <button class="nav-btn"
+     [ngClass]="{'nav-btn-cur' : appStatus.isGest}"
      (click)="setStatus('isGest')">4. Essential Skills</button>
     <button class="nav-btn"
      [ngClass]="{'nav-btn-cur' : appStatus.isMail}"
@@ -31,7 +31,7 @@
     <app-intro-icons *ngIf="appStatus.isMatch"></app-intro-icons>
     <!-- <app-icons-teach></app-icons-teach> -->
     <!-- <app-matching *ngIf="appStatus.isMatch"></app-matching> -->
-    <app-intro-terminology *ngIf="appStatus.isFlash"></app-intro-terminology> 
+    <app-intro-terminology *ngIf="appStatus.isFlash"></app-intro-terminology>
     <!-- <app-flashcard *ngIf="appStatus.isFlash"></app-flashcard> -->
     <app-intro-gestures *ngIf="appStatus.isGest"></app-intro-gestures>
     <!-- <app-email-rwc></app-email-rwc> -->
