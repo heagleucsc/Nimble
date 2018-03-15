@@ -8,17 +8,21 @@ import { ICONS } from '../../assets/matching/icons';
 })
 export class MatchingComponent implements OnInit {
 
+  quizLength:number = 10;
   // path to prepend to imgs
-  imgDir: string = "../../assets/matching/imgs/";
+  imgDir:string = "../../assets/matching/imgs/";
   // values stored into the img/text divs
-  left:string[] = ["", "", "", "", "", "", "", "", "", ""];
-  right:string[] = ["", "", "", "", "", "", "", "", "", ""];
+  left:string[] = [];
+  right:string[] = [];
   // selected imgs/texts
   leftSelected:number = -1;
   rightSelected:number = -1;
   // number of wrong/right answers
   numWrong:number = 0;
   numRight:number = 0;
+  // for tracking incorrect answers
+  wrongList:boolean[] = [];
+  wasWrong:boolean = false;
 
   constructor() {
   }
@@ -35,9 +39,8 @@ export class MatchingComponent implements OnInit {
     let imgbox = img.getBoundingClientRect();
     let textbox = text.getBoundingClientRect();
 
-    // sets canvas width based on #text & #img positions and widths
-    canvas.width = textbox.left - imgbox.right - 228;
-    canvas.height = 344; // height of img/text * 10 + margin/padding
+    canvas.width = textbox.left - imgbox.right - 258;
+    canvas.height = 644;
   }
 
   initSelections(): void {
@@ -48,7 +51,7 @@ export class MatchingComponent implements OnInit {
     this.numWrong = 0;
 
     // loop through arrays and set to unused icon
-    for (let i in this.left) {
+    for (let i = 0; i < this.quizLength; i++) {
       let currIcon:string = "";
       let randIcon:string;
 
@@ -61,6 +64,11 @@ export class MatchingComponent implements OnInit {
     }
     this.shuffle(this.left);
     this.shuffle(this.right);
+  }
+
+  initWrongs(): void {
+    for (let i = 0; i < this.quizLength; i++)
+        this.wrongList[i] = false;
   }
 
   randomIcon(): string {
@@ -84,6 +92,9 @@ export class MatchingComponent implements OnInit {
 
   // sets respective Selected to idx of clicked img/text
   select(idx:number, side:string, other:string): void {
+    // remove wrong icon indicator if selecting new icon
+    this.wasWrong = false;
+
     // check if idx is already selected, unselect if so
     let alreadySelected:boolean = this[`${side}Selected`] === idx;
     this[`${side}Selected`] = alreadySelected ? -1 : this[`${side}Selected`] = idx;
@@ -100,23 +111,31 @@ export class MatchingComponent implements OnInit {
 
     // draw line and increment right if comparison is correct, increment wrong if not
     if (isCorrect) {
-      this.drawLine(this.leftSelected, this.rightSelected);
-      this.numRight++;
-    } else if (this.numWrong < 10) this.numWrong++;
+        this.drawLine(this.leftSelected, this.rightSelected);
+        this.numRight++;
+    } else if (this.numWrong < 10) {
+        this.wasWrong = true;
+
+        // check if we already marked this icon as wrong
+        if (!this.wrongList[idxL]) {
+            this.numWrong++;
+            this.wrongList[idxL] = true;
+        }
+    }
 
     // reset Selecteds
     this.initSelections();
   }
 
-  drawLine(indexLeft:number, indexRight:number): void {
-    // calculate Y value of line; 34 is height of img/text
-	  let leftY = 20 + indexLeft * 34; // position next to img
-	  let rightY = 21 + indexRight * 34; // position next to text
+  drawLine(indexLeft:number, indexRight:number) {
+	  let leftY = 35 + indexLeft * 64;
+	  let rightY = 35 + indexRight * 64;
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 	  let ctx = canvas.getContext("2d");
 
-    // draw actual line
-    ctx.strokeStyle = "#00FF00";
+    ctx.strokeStyle = "#lalala";
+    ctx.lineWidth = 3;
+
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
@@ -127,6 +146,7 @@ export class MatchingComponent implements OnInit {
   restartQuiz(): void {
     this.initSelections();
     this.initArrays();
+    this.initWrongs();
     this.numWrong = this.numRight = 0;
 
     // clear canvas of lines

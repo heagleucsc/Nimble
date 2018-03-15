@@ -13,7 +13,7 @@ export class DesktopCanvasComponent implements OnInit {
     email = false;
     inbox = false;
     displayMessage = false;
-  
+
     constructor() { }
 
     ngOnInit() {
@@ -22,6 +22,11 @@ export class DesktopCanvasComponent implements OnInit {
 	        ctx = canvas.getContext('2d');
 	    canvas.height = bg.height;
 		  canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
+
+	    // ctx.beginPath();
+	    // ctx.moveTo(0, 0);
+	    // ctx.lineTo(canvas.width, canvas.height);
+	    // ctx.stroke();
     }
 
     login() {

@@ -1,22 +1,27 @@
-<div id="img">
-    <ul>
-        <li *ngFor="let img of left; let i = index"><input (click) = "select(i, 'left', 'right')" type="image" src="{{imgDir}}{{img}}" class="buttonImg" [ngClass]="{'active' : i === leftSelected}"></li>
-    </ul>
-</div>
+<div id="matching-body">
+    <div id="img">
+        <ul>
+            <li *ngFor="let img of left; let i = index"><input (click) = "select(i, 'left', 'right')" type="image" src="{{imgDir}}{{img}}" class="buttonImg" [ngClass]="{'active' : i === leftSelected}"></li>
+        </ul>
+    </div>
 
-<!-- <div id="cdiv">  -->
-<canvas id="myCanvas" width="100" height="100">
-</canvas>
-<!-- </div> -->
+    <!-- <div id="cdiv">  -->
+    <canvas id="myCanvas" width="100" height="100">
+    </canvas>
+    <!-- </div> -->
 
-<div id="text">
-    <ul>
-        <li *ngFor="let btn of right; let i = index"><button (click) = "select(i, 'right', 'left')" class="mat-btn" [ngClass]="{'active' : i === rightSelected}">{{btn}}</button></li>
-    </ul>
-</div>
+    <div id="text">
+        <ul>
+            <li *ngFor="let btn of right; let i = index"><button (click) = "select(i, 'right', 'left')" class="mat-btn" [ngClass]="{'active' : i === rightSelected}">{{btn}}</button></li>
+        </ul>
+    </div>
 
-<div id="comp" *ngIf="numRight === 10">
-    <h1>{{10 - numWrong}}/10</h1>
-    <button id="nav-btn-again" (click)="restartQuiz()">Try Again?<i class="material-icons md-48 nav-icon">replay</i></button>
-    <button id="nav-btn-next">Next Section<i class="material-icons md-48 nav-icon">play_arrow</i></button>
+    <div id="wrong" *ngIf="wasWrong">
+      <p id="wrong-text">That was incorrect.  Please try again!</p>
+    </div>
+
+    <div id="comp" *ngIf="numRight === 10">
+        <h2>{{10 - numWrong}}/10 Correct!</h2>
+        <button id="nav-btn-again" (click)="restartQuiz()">Try Again?<i class="material-icons md-24 nav-icon">replay</i></button>
+    </div>
 </div>
