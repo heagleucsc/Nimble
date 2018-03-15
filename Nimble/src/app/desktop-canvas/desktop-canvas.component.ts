@@ -10,7 +10,6 @@ export class DesktopCanvasComponent implements OnInit {
     icons = false;
     files = false;
     folder = false;
-
     constructor() { }
 
     ngOnInit() {
@@ -24,11 +23,6 @@ export class DesktopCanvasComponent implements OnInit {
 	    // ctx.moveTo(0, 0);
 	    // ctx.lineTo(canvas.width, canvas.height);
 	    // ctx.stroke();
-    }
-
-    nextImage() {
-    	var bg = <HTMLImageElement> document.getElementById('bg');
-    	var login = <HTMLImageElement> document.getElementById('login');
     }
 
     login() {
