@@ -37,18 +37,19 @@ export class PhoneComponent implements OnInit {
 	img.src= "../../assets/phone/home.png";
 	
 	//Show app button
-	let app = <HTMLImageElement>document.getElementById("app");
-	app.style.display = "block";
+	let email = <HTMLImageElement>document.getElementById("email");
+	email.style.display = "block";
   }
   
-  openApp(){
+  openAppEmail(){
 	 //hide unnecessary buttons
-	let app = <HTMLImageElement>document.getElementById("app");
-	app.style.display = "none";
+	let email = <HTMLImageElement>document.getElementById("email");
+	email.style.display = "none";
 	
 	let inbox = <HTMLImageElement>document.getElementById("inbox");
 	inbox.style.display = "none";
 	
+	//Switch images
 	let img = <HTMLImageElement>document.getElementById("screen");
     img.src = "../../assets/phone/email.jpg";
 
@@ -72,8 +73,8 @@ export class PhoneComponent implements OnInit {
   
   openEmail(email){
 	//hide unnecessary buttons
-	let app = <HTMLImageElement>document.getElementById("app");
-	app.style.display = "none";
+	let emailApp = <HTMLImageElement>document.getElementById("email");
+	emailApp.style.display = "none";
 	
 	let e1 = <HTMLImageElement>document.getElementById("e1");
 	e1.style.display = "none";
