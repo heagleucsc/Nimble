@@ -85,6 +85,7 @@ hr {
 }
 
 #nav-btn-help {
+  background-color: white;
   position: absolute;
   border: none;
   font-size: 14px;
