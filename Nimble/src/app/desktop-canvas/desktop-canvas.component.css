@@ -17,7 +17,7 @@
 
 #finder {
     position: absolute;
-    top: 550px;
+    top: 540px;
     left: 250px;
     z-index: 5;
 }
@@ -48,6 +48,54 @@
     top: 177px;
     left: 423px;
     z-index: 5;
+}
+
+#email {
+    position: absolute;
+    top: 540px;
+    left: 300px;
+    z-index: 5;
+}
+
+#inbox {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 5;
+}
+
+#item {
+    position: absolute;
+    top: 121px;
+    left: 89px;
+    z-index: 5;
+}
+
+#itemSel {
+    position: absolute;
+    top: 121px;
+    left: 88px;
+    z-index: 5;
+}
+
+#message {
+    position: absolute;
+    top: 105px;
+    left: 364px;
+    z-index: 5;
+}
+
+#continue {
+    position: absolute;
+    top: 600px;
+    left: 800px;
+    z-index: 5;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: white;
+    color: black;
 }
 
 .input {

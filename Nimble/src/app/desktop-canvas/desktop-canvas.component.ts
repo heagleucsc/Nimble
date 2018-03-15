@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesktopCanvasComponent implements OnInit {
 
-    icons = false;
+    finder = false;
     files = false;
     folder = false;
+    email = false;
+    inbox = false;
+    displayMessage = false;
   
     constructor() { }
 
@@ -26,7 +29,7 @@ export class DesktopCanvasComponent implements OnInit {
     	let login = <HTMLImageElement> document.getElementById('login');
     	bg.src = "../assets/desktop-canvas/macDesktop.png";
   		login.parentNode.removeChild(login);
-      this.icons = true;
+      this.finder = true;
     }
 
     openFinder() {
@@ -35,6 +38,30 @@ export class DesktopCanvasComponent implements OnInit {
 
     openFolder() {
       this.folder = true;
+    }
+
+    startEmail() {
+      this.finder = false;
+      this.files = false;
+      this.folder = false;
+      this.email = true;
+    }
+
+    showInbox() {
+      this.inbox = true;
+    }
+
+    showMessage() {
+      this.displayMessage = true;
+    }
+
+    desktopDone() {
+      this.finder = false;
+      this.files = false;
+      this.folder = false;
+      this.email = false;
+      this.inbox = false;
+      this.displayMessage = false;
     }
 
 }

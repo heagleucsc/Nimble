@@ -12,8 +12,24 @@
 <div *ngIf="folder">
 	<img class="resize" id="folderSelected" src="../assets/desktop-canvas/folderSelect.png" height="16.3">
 	<img class="resize" id="file" src="../assets/desktop-canvas/file.png" height="330">
+	<button id="continue" (click)="startEmail()">Continue<i class="material-icons md-24 nav-icon red">play_arrow</i></button>
 </div>
 
-<div id="icons" *ngIf="icons">
+<div *ngIf="finder">
 	<img class="resize" id="finder" src="../assets/desktop-canvas/finder.png" height="50" (click)="openFinder()">
+</div>
+
+<div *ngIf="email">
+	<img class="resize" id="email" src="../assets/desktop-canvas/email.png" height="50" (click)="showInbox()">
+</div>
+
+<div *ngIf="inbox">
+	<img class="resize" id="inbox" src="../assets/desktop-canvas/inbox.png" height="570">
+	<img class="resize" id="item" src="../assets/desktop-canvas/item.png" height="50" (click)="showMessage()">
+</div>
+
+<div *ngIf="displayMessage">
+	<img class="resize" id="itemSel" src="../assets/desktop-canvas/itemSel.png" height="51">
+	<img class="resize" id="message" src="../assets/desktop-canvas/message.png" height="153.5">
+	<button id="continue" (click)="desktopDone()">Continue<i class="material-icons md-24 nav-icon red">play_arrow</i></button>
 </div>
