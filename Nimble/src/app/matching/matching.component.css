@@ -46,6 +46,10 @@ li {
   float: left;
 }
 
+#wrong-text {
+  color: #ED1C24;
+}
+
 .active {
   outline: 4px solid #69c9d6;
   transition: 0.1s ease;

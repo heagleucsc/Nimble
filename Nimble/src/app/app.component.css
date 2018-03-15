@@ -45,6 +45,7 @@ hr {
 .nav-btn-cur {
   color: white !important;
   background: #83A4E0 !important;
+  transition: 0.4s ease;
   outline: none;
 }
 
