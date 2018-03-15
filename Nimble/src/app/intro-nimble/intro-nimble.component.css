@@ -3,18 +3,6 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-#nav-btn-start {
-  position: absolute;
-  border: none;
-  font-size: large;
-  font-weight: bold;
-  right: 5px;
-  margin-top: 15px;
-  background-color: white;
-  color: black;
-  outline: none;
-}
-
 .red {
   color: #FE5F55;
 }

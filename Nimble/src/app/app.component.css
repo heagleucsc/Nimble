@@ -4,13 +4,6 @@ header {
   width: 100%;
 }
 
-body {
-  position: relative;
-  height: 330px;
-  width: 800px;
-  margin-left: 25%;
-}
-
 hr {
   text-align: center;
   padding: 10px;
@@ -51,6 +44,30 @@ hr {
 
 .nav-icon {
   vertical-align: middle;
+}
+
+.red {
+  color: #FE5F55;
+}
+
+#app-body {
+  position: relative;
+  width: 800px;
+  margin-left: 25%;
+}
+
+#continue {
+  position: absolute;
+  display: block;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  right: 5px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: white;
+  color: black;
+  outline: none;
 }
 
 #text-logo {

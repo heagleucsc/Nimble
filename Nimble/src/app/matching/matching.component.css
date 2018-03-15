@@ -15,6 +15,11 @@ li {
   margin: 0 auto;
 }
 
+#matching-body {
+  position: relative;
+  height: 640px;
+}
+
 #nav-btn-again {
   float: left;
   background-color: white;
@@ -78,7 +83,7 @@ li {
   border: none;
   border-left: 6px solid #5eb4c0;
   outline: none;
-  
+
 }
 
 h2 {

@@ -57,18 +57,6 @@ li {
     padding: 10px;
 }
 
-#continue {
-  position: absolute;
-  border: none;
-  font-size: large;
-  font-weight: bold;
-  right: 5px;
-  margin-top: 15px;
-  background-color: white;
-  color: black;
-  outline: none;
-}
-
 .red {
   color: #FE5F55;
 }
