@@ -21,21 +21,55 @@
   
 }
 
-.smartphone .content{
-	position: relative;
-}
-
-.home-screen{
+.content #app{
 	position: absolute;
-	width: auto;
-	height: auto;
-	overflow: hidden;
+	bottom: 66px;
+	left: 8px;
+	height: 37px;
 }
 
-.apps-screen{
-	display: block;
-	vertical-align: left;
+.content #e1{
+	position: absolute;
+	top: 42px;
+	left: 16px;
+	height: 45px;
 }
+
+.content #e2{
+	position: absolute;
+	top: 97px;
+	left: 16px;
+	height: 45px;
+}
+
+.content #e3{
+	position: absolute;
+	top: 153.5px;
+	left: 16px;
+	height: 44px;
+}
+
+.content #e4{
+	position: absolute;
+	top: 209.5px;
+	left: 16px;
+	height: 43px;
+}
+
+.content #e5{
+	position: absolute;
+	top: 265px;
+	left: 16px;
+	height: 33.5px;
+}
+
+.content #inbox{
+	position: absolute;
+	top: 14px;
+	left: 5px;
+	height: 18px;
+}
+
 
 #next-btn{
   width: 50px;
