@@ -27,7 +27,7 @@ export class AppComponent {
                this.appStatus === "GestGame";
       } case "Mail": {
         return this.appStatus === "Mail" ||
-               this.appStatus === "MailGame";
+               this.appStatus === "MailTeach";
       }
     }
   }
@@ -70,9 +70,9 @@ export class AppComponent {
         this.appStatus = "Mail";
       break;
       } case "Mail": {
-        this.appStatus = "MailGame";
+        this.appStatus = "MailTeach";
       break;
-      } case "MailGame": {
+      } case "MailTeach": {
         // ???
       break;
       }

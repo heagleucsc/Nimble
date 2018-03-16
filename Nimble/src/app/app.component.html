@@ -36,6 +36,7 @@
     <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
     <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
     <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>
+    <app-email-rwc *ngIf="appStatus === 'MailTeach'"></app-email-rwc>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>

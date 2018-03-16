@@ -9,6 +9,7 @@ import { EmailRwcComponent } from './email-rwc/email-rwc.component';
 import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
+import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,7 +23,8 @@ describe('AppComponent', () => {
         EmailRwcComponent,
         IconsTeachComponent,
         IntroGesturesComponent,
-        IntroEmailComponent
+        IntroEmailComponent,
+        IconsTeachDetailedComponent
       ],
     }).compileComponents();
   }));
