@@ -23,31 +23,31 @@ export class EmailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
-  	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+   document.getElementById("term").innerHTML = "<img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 60px;'>";
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
   }
 
   rotatecard(): void {
   	this.index = (this.index + 1) % this.total_cards;
-  	document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
-  	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML = "<img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 60px;'>";
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
 	}
 
   backcard(): void {
   	this.index = (this.index - 1 + this.total_cards) % this.total_cards;
-  	document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
-  	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML = "<img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 60px;'>";
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
   }
 
   flipcard(): void {
-	var term = document.getElementById("email term");
+	var term = document.getElementById("term");
 	if(term.style.display == "block") {
 		term.style.display = "none";
 	} else {
 		term.style.display = "block";
 	}
 
-	var definition = document.getElementById("email definition");
+	var definition = document.getElementById("definition");
 	if(definition.style.display == "block") {
 		definition.style.display = "none";
 	} else {

@@ -1,0 +1,59 @@
+.flashcard {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: rgba(0,0,0,.80);
+  padding-left: 30px;
+  text-align: left;
+  text-overflow: clip;
+  width: 500px;
+  height: 350px;
+  border-left: 6px solid #f7be5f;
+  margin-top: 20px;
+}
+
+#term, #definition {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    height: 100px;
+}
+
+#img{
+	height: 40px;
+	margin: 0 auto;
+}
+
+#back_butt {
+  position: absolute;
+  left: 50px;
+  width: 100px; 
+}
+
+#flip_butt {
+  position: absolute;
+  left: 200px;
+  width: 125px; 
+
+}
+
+#rotate_butt {
+  position: absolute;
+  left: 375px;
+  width: 100px; 
+}
+
+.style_butt {
+  display: inline-block;
+  background-color: #68c9d6;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px 0px;
+  bottom: 20px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-bottom: 4px solid #5eb4c0;
+}

@@ -1,15 +1,10 @@
-<div class="email flashcard">
-<br>
-<br>
-<label id = "email term" style = "display: block;"><img src = "../../assets/matching/imgs/icon_add.png"></label>
-<label id = "email definition" style = "display: none;">Here is the definition</label>
-<br>
-<br>
-<input id ="email back_butt" type="button" value="Last Card"
-(click)="backcard()"
-*ngIf="index != 0">
-<input id ="email flip_butt" type="button" (click)="flipcard()" value="Flip Card">
-<input id ="email rotate_butt" type="button" (click)="rotatecard()" value="Next Card"
-*ngIf="index != total_cards - 1">
-<br>
+<div class="flashcard">
+	<label id = "term" style = "display: block;"><img id = "img" src = "../../assets/matching/imgs/icon_add.png"></label>
+	<label id = "definition" style = "display: none;">Here is the definition</label>
+	<input id="back_butt" class = "style_butt" type="button" value="Last Card"
+	(click)="backcard()"
+	*ngIf="index != 0">
+	<input id="flip_butt" class="style_butt" type="button" (click)="flipcard()" value="Flip Card">
+	<input id="rotate_butt" class="style_butt" type="button" (click)="rotatecard()" value="Next Card"
+	*ngIf="index != total_cards - 1">
 </div>
