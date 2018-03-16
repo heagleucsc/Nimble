@@ -1,79 +1,61 @@
 import { Component } from '@angular/core';
 
+enum ORDER {
+    Intro = 0,
+    Flash,
+    FlashGame,
+    Match,
+    MatchTeach1,
+    MatchTeach,
+    MatchTeach2,
+    MatchGame,
+    Gest,
+    GestGame,
+    Mail,
+    MailTeach
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  ORDER = ORDER;
+
   title:string = 'Nimble';
-  appStatus:string = "Intro";
+  appStatus = ORDER.Intro;
   contStr:string = "Begin";
 
-  chkStatus(status: string): boolean {
+  chkStatus(status:string): boolean {
     switch(status) {
       case "Intro": {
-        return this.appStatus === "Intro";
+        return this.appStatus === ORDER.Intro;
       } case "Flash": {
-        return this.appStatus === "Flash" ||
-               this.appStatus === "FlashGame";
+        return this.appStatus === ORDER.Flash ||
+               this.appStatus === ORDER.FlashGame;
       } case "Match": {
-        return this.appStatus === "Match" ||
-               this.appStatus === "MatchTeach1" ||
-               this.appStatus === "MatchTeach2" ||
-               this.appStatus === "MatchGame";
+        return this.appStatus === ORDER.Match ||
+               this.appStatus === ORDER.MatchTeach1 ||
+               this.appStatus === ORDER.MatchTeach2 ||
+               this.appStatus === ORDER.MatchGame;
       } case "Gest": {
-        return this.appStatus === "Gest" ||
-               this.appStatus === "GestGame";
+        return this.appStatus === ORDER.Gest ||
+               this.appStatus === ORDER.GestGame;
       } case "Mail": {
-        return this.appStatus === "Mail" ||
-               this.appStatus === "MailTeach";
+        return this.appStatus === ORDER.Mail ||
+               this.appStatus === ORDER.MailTeach;
       }
     }
   }
 
-  setStatus(status: string): void {
+  setStatus(status): void {
       this.appStatus = status;
-      this.contStr = this.appStatus === "Intro" ? "Begin" : "Continue";
+      this.contStr = this.appStatus === ORDER.Intro ? "Begin" : "Continue";
   }
 
   contFun(): void {
-    switch(this.appStatus) {
-      case "Intro": {
-        this.appStatus = "Flash";
-      break;
-      } case "Flash": {
-        this.appStatus = "FlashGame";
-      break;
-      } case "FlashGame": {
-        this.appStatus = "Match";
-      break;
-      } case "Match": {
-        this.appStatus = "MatchTeach1";
-      break;
-      } case "MatchTeach1": {
-        this.appStatus = "MatchTeach2";
-      break;
-      } case "MatchTeach2": {
-        this.appStatus = "MatchGame";
-        break;
-      } case "MatchGame": {
-        this.appStatus = "Gest";
-      break;
-      } case "Gest": {
-        this.appStatus = "GestGame";
-      break;
-      } case "GestGame": {
-        this.appStatus = "Mail";
-      break;
-      } case "Mail": {
-        this.appStatus = "MailTeach";
-      break;
-      } case "MailTeach": {
-        // ???
-      break;
-      }
-    }
-    this.contStr = this.appStatus === "Intro" ? "Begin" : "Continue";
+    this.appStatus++;
+    this.contStr = this.appStatus === ORDER.Intro ? "Begin" : "Continue";
   }
 }
