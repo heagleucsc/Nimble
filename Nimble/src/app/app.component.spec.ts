@@ -14,6 +14,7 @@ import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
 import { VideoChatComponent } from './video-chat/video-chat.component';
+import { PhoneComponent } from './phone/phone.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,6 +23,7 @@ describe('AppComponent', () => {
         AppComponent,
         EmailComponent,
         VirtualcComponent,
+    		PhoneComponent,
         MatchingComponent,
         FlashcardComponent,
         IntroIconsComponent,
