@@ -39,7 +39,7 @@ import { VideoChatComponent } from './video-chat/video-chat.component';
     IntroGesturesComponent,
     IntroEmailComponent,
     IconsTeachDetailedComponent,
-    AdjustSettingsComponent
+    AdjustSettingsComponent,
     DesktopCanvasComponent,
     IconsTeachDetailedComponent,
     NimbleHelpComponent,
