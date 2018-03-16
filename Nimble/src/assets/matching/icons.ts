@@ -1,3 +1,5 @@
+// maps icon file name to icon definition
+
 export const ICONS: {[key: string]: string} = {
     "icon_add.png": "Add",
     "icon_back.png": "Back",

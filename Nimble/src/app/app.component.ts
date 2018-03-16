@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Order of app components to be played through
 enum ORDER {
     Intro = 0,
     Flash,
@@ -21,12 +22,14 @@ enum ORDER {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // allows html code to read enum
   ORDER = ORDER;
 
   title:string = 'Nimble';
-  appStatus = ORDER.Intro;
   contStr:string = "Begin";
+  appStatus = ORDER.Intro;
 
+  // check which is current status to update highlighted sidebar button
   chkStatus(status:string): boolean {
     switch(status) {
       case "Intro": {
@@ -50,11 +53,13 @@ export class AppComponent {
     }
   }
 
+  // sets status on clicking sidebar button
   setStatus(status): void {
       this.appStatus = status;
       this.contStr = this.appStatus === ORDER.Intro ? "Begin" : "Continue";
   }
 
+  // sets status on clicking begin/continue
   contFun(): void {
     this.appStatus++;
     this.contStr = this.appStatus === ORDER.Intro ? "Begin" : "Continue";
