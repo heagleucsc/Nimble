@@ -31,7 +31,8 @@
     <app-intro-terminology *ngIf="appStatus === 'Flash'"></app-intro-terminology>
     <app-flashcard *ngIf="appStatus === 'FlashGame'"></app-flashcard>
     <app-intro-icons *ngIf="appStatus === 'Match'"></app-intro-icons>
-    <app-icons-teach *ngIf="appStatus === 'MatchTeach'"></app-icons-teach>
+    <app-icons-teach-detailed *ngIf="appStatus === 'MatchTeach1'"></app-icons-teach-detailed>
+    <app-icons-teach *ngIf="appStatus === 'MatchTeach2'"></app-icons-teach>
     <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
     <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
     <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>

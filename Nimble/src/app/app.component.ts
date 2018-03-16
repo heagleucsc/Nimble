@@ -19,7 +19,8 @@ export class AppComponent {
                this.appStatus === "FlashGame";
       } case "Match": {
         return this.appStatus === "Match" ||
-               this.appStatus === "MatchTeach" ||
+               this.appStatus === "MatchTeach1" ||
+               this.appStatus === "MatchTeach2" ||
                this.appStatus === "MatchGame";
       } case "Gest": {
         return this.appStatus === "Gest" ||
@@ -48,11 +49,14 @@ export class AppComponent {
         this.appStatus = "Match";
       break;
       } case "Match": {
-        this.appStatus = "MatchTeach";
+        this.appStatus = "MatchTeach1";
       break;
-      } case "MatchTeach": {
+      } case "MatchTeach1": {
+        this.appStatus = "MatchTeach2";
+      break;
+      } case "MatchTeach2": {
         this.appStatus = "MatchGame";
-      break;
+        break;
       } case "MatchGame": {
         this.appStatus = "Gest";
       break;
