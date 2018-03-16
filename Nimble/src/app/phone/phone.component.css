@@ -21,11 +21,151 @@
   
 }
 
+.content #message{
+	position: absolute;
+	top: 12.5px;
+	left: 6px;
+	height: 38px;
+}
+
+.content #calender{
+	position: absolute;
+	top: 11.25px;
+	left: 48.5px;
+	height: 40px;
+}
+
+.content #photo{
+	position: absolute;
+	top: 12px;
+	left: 92px;
+	height: 38px;
+}
+
+.content #camera{
+	position: absolute;
+	top: 12px;
+	left: 134px;
+	height: 39px;
+}
+
+.content #weather{
+	position: absolute;
+	top: 63px;
+	left: 5px;
+	height: 39px;
+}
+
+.content #clock{
+	position: absolute;
+	top: 64px;
+	left: 49px;
+	height: 39px;
+}
+
+.content #map{
+	position: absolute;
+	top: 62px;
+	left: 92px;
+	height: 40px;
+}
+
+.content #video{
+	position: absolute;
+	top: 63px;
+	left: 134px;
+	height: 40px;
+}
+
+.content #wallet{
+	position: absolute;
+	top: 113px;
+	left: 6px;
+	height: 40px;
+}
+
+.content #notes{
+	position: absolute;
+	top: 114px;
+	left: 49px;
+	height: 39px;
+}
+
+.content #reminder{
+	position: absolute;
+	top: 110px;
+	left: 90px;
+	height: 43px;
+}
+
+.content #stocks{
+	position: absolute;
+	top: 114px;
+	left: 134px;
+	height: 39px;
+}
+
+.content #itunes{
+	position: absolute;
+	top: 164px;
+	left: 6px;
+	height: 40px;
+}
+
+.content #appStore{
+	position: absolute;
+	top: 160px;
+	left: 49px;
+	height: 44px;
+}
+
+.content #ibooks{
+	position: absolute;
+	top: 164.5px;
+	left: 92px;
+	height: 39px;
+}
+
+.content #health{
+	position: absolute;
+	top: 164.5px;
+	left: 135px;
+	height: 40px;
+}
+
 .content #email{
 	position: absolute;
 	bottom: 66px;
 	left: 8px;
 	height: 37px;
+}
+
+.content #phone{
+	position: absolute;
+	bottom: 2px;
+	left: 7px;
+	height: 37.5px;
+}
+
+.content #safari{
+	position: absolute;
+	bottom: 2px;
+	left: 49px;
+	height: 37.5px;
+}
+
+.content #music{
+	position: absolute;
+	bottom: 2px;
+	left: 92px;
+	height: 38px;
+}
+
+.content #settings{
+	position: absolute;
+	bottom: 1px;
+	left: 135px;
+	height: 39.5px;
 }
 
 .content #e1{

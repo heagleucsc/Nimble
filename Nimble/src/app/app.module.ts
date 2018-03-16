@@ -29,7 +29,7 @@ import { IntroEmailComponent } from './intro-email/intro-email.component';
     IconsTeachComponent,
     IntroGesturesComponent,
     IntroEmailComponent
-
+],
   imports: [
     BrowserModule
   ],
