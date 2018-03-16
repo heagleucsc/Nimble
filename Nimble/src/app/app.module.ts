@@ -13,6 +13,9 @@ import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
+import { NimbleHelpComponent } from './nimble-help/nimble-help.component';
+import { VideoChatComponent } from './video-chat/video-chat.component';
+
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-
     IconsTeachComponent,
     IntroGesturesComponent,
     IntroEmailComponent,
-    IconsTeachDetailedComponent
+    IconsTeachDetailedComponent,
+    NimbleHelpComponent,
+    VideoChatComponent
   ],
   imports: [
     BrowserModule

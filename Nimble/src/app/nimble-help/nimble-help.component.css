@@ -1,0 +1,60 @@
+.card {
+	position: relative;
+	text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.card-header {
+	background-color: #69c9d6;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    background-image: url('../../assets/background_pattern_light.png');
+    box-sizing: border-box; /* puts border inside of div instead of around */
+    border-bottom: 6px solid #69c9d6;
+}
+
+.card-title {
+	padding:20px;
+	padding-left: 50px;
+}
+
+
+.card-content {
+    font-size: larger;
+    margin-top: 25px;
+    padding: 25px;
+    padding-left: 50px;
+    display: inline-block;
+}
+
+h1 {
+    color: rgba(0,0,0,0.8);
+}
+
+h4 {
+    color: rgba(0,0,0,0.6);
+}
+
+p {
+    color: rgba(0,0,0,0.75);
+    padding-left: 25px;
+} 
+b {
+    padding-top: 15px;
+    color: rgba(0,0,0,0.75);
+}
+
+ul {
+    list-style-type: square;
+    color: rgba(0,0,0,0.75);
+    margin-left: 25px;
+}
+
+/* hr style from https://css-tricks.com/examples/hrs/ */
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
