@@ -10,6 +10,7 @@ import { EmailRwcComponent } from './email-rwc/email-rwc.component';
 import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
+import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
 
 describe('AppComponent', () => {
@@ -27,6 +28,7 @@ describe('AppComponent', () => {
         IconsTeachComponent,
         IntroGesturesComponent,
         IntroEmailComponent,
+        IconsTeachDetailedComponent,
         DesktopCanvasComponent,
         IntroTerminologyComponent
       ],
