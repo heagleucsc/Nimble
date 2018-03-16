@@ -19,14 +19,17 @@ export class PhoneComponent implements OnInit {
   }
   
   getMessage(){
-	var text;
+	var text1, text2;
 	
 	if(this.activityStatus == ORDER.MailGame2){ 
-	   text = "Challenge: Open the email app and then open a email. Return to the inbox by clicking the inbox button.";
+	   text1 = "Challenge: Open the email app. Click on an email to open it. Return to the inbox by clicking the inbox button.";
+	   text2 = "Open Emails on Your Phone";
 	}else{
-	   text = "Challenge: Open three different apps. Open an app by clicking on its icon, and return to the home screen by pression the home button.";
+	   text1 = "Challenge: Open an app by clicking on its icon, and return to the home screen by clicking the home button.";
+	   text2 = "Learn How to Open Apps";
 	}	
-	document.getElementById("info").innerHTML = text;
+	document.getElementById("info").innerHTML = text1;
+	document.getElementById("title").innerHTML = text2;
   }
 
   goHome(){
