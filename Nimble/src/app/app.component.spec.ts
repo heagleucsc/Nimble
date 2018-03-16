@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { EmailComponent } from './email/email.component';
 import { MatchingComponent } from './matching/matching.component';
 import { FlashcardComponent } from './flashcard/flashcard.component';
 import { IntroIconsComponent } from './intro-icons/intro-icons.component';
@@ -16,6 +17,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        EmailComponent,
         MatchingComponent,
         FlashcardComponent,
         IntroIconsComponent,

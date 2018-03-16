@@ -9,6 +9,7 @@ import { VirtualcComponent } from './virtualc/virtualc.component';
 import { IntroIconsComponent } from './intro-icons/intro-icons.component';
 import { IntroNimbleComponent } from './intro-nimble/intro-nimble.component';
 import { IntroTerminologyComponent } from './intro-terminology/intro-terminology.component';
+import { EmailComponent } from './email/email.component';
 import { PhoneComponent } from './phone/phone.component';
 import { EmailRwcComponent } from './email-rwc/email-rwc.component';
 import { IconsTeachComponent } from './icons-teach/icons-teach.component';
@@ -30,6 +31,7 @@ import { VideoChatComponent } from './video-chat/video-chat.component';
     IntroIconsComponent,
     IntroNimbleComponent,
     IntroTerminologyComponent,
+    EmailComponent,
     PhoneComponent,
     EmailRwcComponent,
     IconsTeachComponent,
