@@ -128,6 +128,7 @@ export class MatchingComponent implements OnInit {
   }
 
   drawLine(indexLeft:number, indexRight:number) {
+
 	  let leftY = 35 + indexLeft * 64;
 	  let rightY = 35 + indexRight * 64;
 	  let canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
@@ -135,11 +136,12 @@ export class MatchingComponent implements OnInit {
 
     ctx.strokeStyle = "#lalala";
     ctx.lineWidth = 3;
-
+	
 	  ctx.beginPath();
 	  ctx.moveTo(0, leftY);
 	  ctx.lineTo(canvas.width, rightY);
 	  ctx.stroke();
+
   }
 
   // reset quiz on completion
