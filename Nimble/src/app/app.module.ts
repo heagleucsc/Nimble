@@ -17,6 +17,7 @@ import { IntroGesturesComponent } from './intro-gestures/intro-gestures.componen
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
+import { AdjustSettingsComponent } from './adjust-settings/adjust-settings.component';
 import { NimbleHelpComponent } from './nimble-help/nimble-help.component';
 import { VideoChatComponent } from './video-chat/video-chat.component';
 
@@ -37,6 +38,8 @@ import { VideoChatComponent } from './video-chat/video-chat.component';
     IconsTeachComponent,
     IntroGesturesComponent,
     IntroEmailComponent,
+    IconsTeachDetailedComponent,
+    AdjustSettingsComponent
     DesktopCanvasComponent,
     IconsTeachDetailedComponent,
     NimbleHelpComponent,
