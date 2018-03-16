@@ -13,7 +13,9 @@ import { IntroGesturesComponent } from './intro-gestures/intro-gestures.componen
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
+import { NimbleHelpComponent } from './nimble-help/nimble-help.component';
 import { VideoChatComponent } from './video-chat/video-chat.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -34,6 +36,7 @@ describe('AppComponent', () => {
         IconsTeachDetailedComponent,
         DesktopCanvasComponent,
         IntroTerminologyComponent,
+        NimbleHelpComponent,
         VideoChatComponent
       ],
     }).compileComponents();
