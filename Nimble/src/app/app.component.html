@@ -10,32 +10,35 @@
 
   <div id="sidebar">
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Intro' || appStatus === 'IntroGame'}"
-     (click)="setStatus('Intro')">1. Introduction</button>
+     [ngClass]="{'nav-btn-cur' : chkStatus('Intro')}"
+     (click)="setStatus(ORDER.Intro)">1. Introduction</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Flash' || appStatus === 'FlashGame'}"
-     (click)="setStatus('Flash')">2. Terminology</button>
+     [ngClass]="{'nav-btn-cur' : chkStatus('Flash')}"
+     (click)="setStatus(ORDER.Flash)">2. Terminology</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Match' || appStatus === 'MatchGame'}"
-     (click)="setStatus('Match')">3. Icons</button>
+     [ngClass]="{'nav-btn-cur' : chkStatus('Match')}"
+     (click)="setStatus(ORDER.Match)">3. Icons</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Gest' || appStatus === 'GestGame'}"
-     (click)="setStatus('Gest')">4. Essential Skills</button>
+     [ngClass]="{'nav-btn-cur' : chkStatus('Gest')}"
+     (click)="setStatus(ORDER.Gest)">4. Essential Skills</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus === 'Mail' || appStatus === 'MailGame'}"
-     (click)="setStatus('Mail')">5. E-Mail</button>
+     [ngClass]="{'nav-btn-cur' : chkStatus('Mail')}"
+     (click)="setStatus(ORDER.Mail)">5. E-Mail</button>
   </div>
 
 
   <div id="app-body">
-    <app-intro-nimble *ngIf="appStatus === 'Intro'"></app-intro-nimble>
-    <app-intro-terminology *ngIf="appStatus === 'Flash'"></app-intro-terminology>
-    <app-flashcard *ngIf="appStatus === 'FlashGame'"></app-flashcard>
-    <app-intro-icons *ngIf="appStatus === 'Match'"></app-intro-icons>
-    <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
-    <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
-    <app-desktop-canvas *ngIf="appStatus === 'GestGame'"></app-desktop-canvas>
-    <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>
+    <app-intro-nimble *ngIf="appStatus === ORDER.Intro"></app-intro-nimble>
+    <app-intro-terminology *ngIf="appStatus === ORDER.Flash"></app-intro-terminology>
+    <app-flashcard *ngIf="appStatus === ORDER.FlashGame"></app-flashcard>
+    <app-intro-icons *ngIf="appStatus === ORDER.Match"></app-intro-icons>
+    <app-icons-teach-detailed *ngIf="appStatus === ORDER.MatchTeach1"></app-icons-teach-detailed>
+    <app-icons-teach *ngIf="appStatus === ORDER.MatchTeach2"></app-icons-teach>
+    <app-matching *ngIf="appStatus === ORDER.MatchGame"></app-matching>
+    <app-intro-gestures *ngIf="appStatus === ORDER.Gest"></app-intro-gestures>
+    <app-intro-email *ngIf="appStatus === ORDER.Mail"></app-intro-email>
+    <app-email-rwc *ngIf="appStatus === ORDER.MailTeach"></app-email-rwc>
+    <app-email *ngIf="appStatus === ORDER.MailGame"></app-email>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>
