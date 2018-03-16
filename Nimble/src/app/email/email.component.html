@@ -5,8 +5,11 @@
 <label id = "email definition" style = "display: none;">Here is the definition</label>
 <br>
 <br>
-<input id ="email back_butt" type="button" (click)="backcard()" value="Last Card">
+<input id ="email back_butt" type="button" value="Last Card"
+(click)="backcard()"
+*ngIf="index != 0">
 <input id ="email flip_butt" type="button" (click)="flipcard()" value="Flip Card">
-<input id ="email rotate_butt" type="button" (click)="rotatecard()" value="Next Card">
+<input id ="email rotate_butt" type="button" (click)="rotatecard()" value="Next Card"
+*ngIf="index != total_cards - 1">
 <br>
 </div>

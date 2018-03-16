@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VirtualcComponent implements OnInit {
   keyword = [
-    ["../../assets/virtualc/vc_info.png", "../../assets/virtualc/vc_info.png"], 
+    ["../../assets/virtualc/vc_info.png", "../../assets/virtualc/vc_info.png"],
     ["../../assets/virtualc/compose_info.png", "../../assets/virtualc/compose_info.png"],
     ["../../assets/virtualc/compose_gmail.png", "../../assets/virtualc/compose_c_gmail.png"],
     ["../../assets/virtualc/compose_apple.png", "../../assets/virtualc/compose_c_apple.png"],
@@ -42,7 +42,7 @@ export class VirtualcComponent implements OnInit {
   	this.termSrc =  this.keyword[this.index][0];
   	this.defnSrc =  this.keyword[this.index][1];
 	}
-	
+
 	backcard(): void {
   	this.index = (this.index - 1) % this.total_cards;
   	this.termSrc = this.keyword[this.index][0];
