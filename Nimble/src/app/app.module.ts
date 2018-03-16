@@ -13,6 +13,7 @@ import { EmailRwcComponent } from './email-rwc/email-rwc.component';
 import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
+import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 
 
 
@@ -28,8 +29,10 @@ import { IntroEmailComponent } from './intro-email/intro-email.component';
     EmailRwcComponent,
     IconsTeachComponent,
     IntroGesturesComponent,
-    IntroEmailComponent
-],
+    IntroEmailComponent,
+    IconsTeachDetailedComponent
+  ],
+
   imports: [
     BrowserModule
   ],
