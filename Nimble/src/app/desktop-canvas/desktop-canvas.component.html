@@ -1,5 +1,6 @@
 <div class="card-header">
 	<div class="card-title">
+		<h1 id="title">Learn the Basics</h1>
 		<p id="info"> Challenge:</p>
 	</div>
 </div>
@@ -22,7 +23,6 @@
 		<div *ngIf="folder">
 			<img class="resize" id="folderSelected" src="../assets/desktop-canvas/folderSelect.png" height="16.3">
 			<img class="resize" id="file" src="../assets/desktop-canvas/file.png" height="330">
-			<button id="continue" (click)="startEmail()">Continue<i class="material-icons md-24 nav-icon red">play_arrow</i></button>
 		</div>
 	</div>
 
@@ -39,7 +39,6 @@
 		<div *ngIf="displayMessage">
 			<img class="resize" id="itemSel" src="../assets/desktop-canvas/itemSel.png" height="51">
 			<img class="resize" id="message" src="../assets/desktop-canvas/message.png" height="153.5">
-			<button id="continue" (click)="desktopDone()">Continue<i class="material-icons md-24 nav-icon red">play_arrow</i></button>
 		</div>
 	</div>
 </div>
