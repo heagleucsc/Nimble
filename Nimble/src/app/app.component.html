@@ -3,7 +3,7 @@
 
   <header>
       <img id="text-logo" src="../assets/nimble_logo_transparent_80.png">
-      <button id="nav-btn-help">Help <i class="material-icons md-18 nav-icon">help</i></button>
+      <button id="nav-btn-help" (click)="setStatus(ORDER.Help)">Help <i class="material-icons md-18 nav-icon">help</i></button>
   </header>
 
   <hr>  <!-- mustard yellow divider -->
@@ -48,5 +48,6 @@
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>
+    <app-nimble-help *ngIf="appStatus === ORDER.Help"></app-nimble-help>
   </div>
 </div>

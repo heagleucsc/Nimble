@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 // Order of app components to be played through
 export enum ORDER {
+    Help = -1,
     Intro = 0,
     Flash,
     FlashGame,
