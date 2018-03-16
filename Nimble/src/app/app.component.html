@@ -26,6 +26,7 @@
      (click)="setStatus(ORDER.Mail)">5. E-Mail</button>
   </div>
 
+
   <div id="app-body">
     <app-intro-nimble *ngIf="appStatus === ORDER.Intro"></app-intro-nimble>
     <app-intro-terminology *ngIf="appStatus === ORDER.Flash"></app-intro-terminology>
@@ -37,6 +38,7 @@
     <app-intro-gestures *ngIf="appStatus === ORDER.Gest"></app-intro-gestures>
     <app-intro-email *ngIf="appStatus === ORDER.Mail"></app-intro-email>
     <app-email-rwc *ngIf="appStatus === ORDER.MailTeach"></app-email-rwc>
+    <app-email *ngIf="appStatus === ORDER.MailGame"></app-email>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>

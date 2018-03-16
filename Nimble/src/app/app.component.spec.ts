@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { EmailComponent } from './email/email.component';
 import { MatchingComponent } from './matching/matching.component';
 import { FlashcardComponent } from './flashcard/flashcard.component';
 import { IntroIconsComponent } from './intro-icons/intro-icons.component';
@@ -10,11 +11,14 @@ import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
+import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        EmailComponent,
         MatchingComponent,
         FlashcardComponent,
         IntroIconsComponent,
@@ -24,7 +28,9 @@ describe('AppComponent', () => {
         IconsTeachComponent,
         IntroGesturesComponent,
         IntroEmailComponent,
-        IconsTeachDetailedComponent
+        IconsTeachDetailedComponent,
+        DesktopCanvasComponent,
+        IntroTerminologyComponent
       ],
     }).compileComponents();
   }));

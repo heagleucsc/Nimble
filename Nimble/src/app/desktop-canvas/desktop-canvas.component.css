@@ -1,0 +1,112 @@
+#bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+#desktopCanvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+
+#pass {
+    top: 293.9px;
+}
+
+#finder {
+    position: absolute;
+    top: 540px;
+    left: 250px;
+    z-index: 5;
+}
+
+#files {
+    position: absolute;
+    top: 100px;
+    left: 79px;
+    z-index: 5;
+}
+
+#folder {
+    position: absolute;
+    top: 180px;
+    left: 251px;
+    z-index: 5;
+}
+
+#folderSelected {
+    position: absolute;
+    top: 180px;
+    left: 251px;
+    z-index: 5;
+}
+
+#file {
+    position: absolute;
+    top: 177px;
+    left: 423px;
+    z-index: 5;
+}
+
+#email {
+    position: absolute;
+    top: 540px;
+    left: 300px;
+    z-index: 5;
+}
+
+#inbox {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 5;
+}
+
+#item {
+    position: absolute;
+    top: 121px;
+    left: 89px;
+    z-index: 5;
+}
+
+#itemSel {
+    position: absolute;
+    top: 121px;
+    left: 88px;
+    z-index: 5;
+}
+
+#message {
+    position: absolute;
+    top: 105px;
+    left: 364px;
+    z-index: 5;
+}
+
+#continue {
+    position: absolute;
+    top: 600px;
+    left: 800px;
+    z-index: 5;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: white;
+    color: black;
+}
+
+.input {
+	font: Helvetica Nuel;
+	color: #cccccc;
+	font-size: 8px;
+	position: absolute;
+    height: 14px;
+    width: 83.4px;
+    left: 437.2px;
+    z-index: 5;
+	background-color: rgba(0,0,0,0.1);
+	border: none;
+}
