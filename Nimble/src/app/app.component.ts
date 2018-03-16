@@ -10,10 +10,12 @@ enum ORDER {
     MatchTeach2,
     MatchGame,
     Gest,
-    GestGame,
+    GestGame2,
+    GestGame3,
     Mail,
     MailTeach,
-    MailGame
+    MailGame,
+    MailRWC
 }
 
 @Component({
@@ -44,11 +46,13 @@ export class AppComponent {
                this.appStatus === ORDER.MatchGame;
       } case "Gest": {
         return this.appStatus === ORDER.Gest ||
-               this.appStatus === ORDER.GestGame;
+               this.appStatus === ORDER.GestGame2 ||
+               this.appStatus === ORDER.GestGame3;
       } case "Mail": {
         return this.appStatus === ORDER.Mail ||
                this.appStatus === ORDER.MailTeach ||
-               this.appStatus === ORDER.MailGame;
+               this.appStatus === ORDER.MailGame ||
+               this.appStatus === ORDER.MailRWC;
       }
     }
   }

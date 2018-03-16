@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { EmailComponent } from './email/email.component';
 import { MatchingComponent } from './matching/matching.component';
 import { FlashcardComponent } from './flashcard/flashcard.component';
+import { VirtualcComponent } from './virtualc/virtualc.component';
 import { IntroIconsComponent } from './intro-icons/intro-icons.component';
 import { IntroNimbleComponent } from './intro-nimble/intro-nimble.component';
 import { IntroTerminologyComponent } from './intro-terminology/intro-terminology.component';
@@ -12,6 +13,7 @@ import { IntroGesturesComponent } from './intro-gestures/intro-gestures.componen
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
+import { VideoChatComponent } from './video-chat/video-chat.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,6 +21,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         EmailComponent,
+        VirtualcComponent,
         MatchingComponent,
         FlashcardComponent,
         IntroIconsComponent,
@@ -30,7 +33,8 @@ describe('AppComponent', () => {
         IntroEmailComponent,
         IconsTeachDetailedComponent,
         DesktopCanvasComponent,
-        IntroTerminologyComponent
+        IntroTerminologyComponent,
+        VideoChatComponent
       ],
     }).compileComponents();
   }));
