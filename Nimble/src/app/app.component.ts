@@ -6,7 +6,6 @@ enum ORDER {
     FlashGame,
     Match,
     MatchTeach1,
-    MatchTeach,
     MatchTeach2,
     MatchGame,
     Gest,
