@@ -12,7 +12,8 @@ enum ORDER {
     Gest,
     GestGame,
     Mail,
-    MailTeach
+    MailTeach,
+    MailGame
 }
 
 @Component({
@@ -44,7 +45,8 @@ export class AppComponent {
                this.appStatus === ORDER.GestGame;
       } case "Mail": {
         return this.appStatus === ORDER.Mail ||
-               this.appStatus === ORDER.MailTeach;
+               this.appStatus === ORDER.MailTeach ||
+               this.appStatus === ORDER.MailGame;
       }
     }
   }
