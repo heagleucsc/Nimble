@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ORDER} from '../app.component';
 
 @Component({
   selector: 'app-desktop-canvas',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-canvas.component.css']
 })
 export class DesktopCanvasComponent implements OnInit {
+    @Input() activityStatus = 0;
+    ORDER = ORDER;
 
     // Set all interactive elements to hidden by default
     finder = false;
@@ -14,6 +17,8 @@ export class DesktopCanvasComponent implements OnInit {
     email = false;
     inbox = false;
     displayMessage = false;
+    GestGame = false;
+    EmailGame = false;
 
     constructor() { }
 
@@ -24,6 +29,22 @@ export class DesktopCanvasComponent implements OnInit {
 	        ctx = canvas.getContext('2d');
 	    canvas.height = bg.height;
 		  canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
+      this.getMessage();
+    }
+
+    getMessage(){
+      let text;
+      console.log(this.activityStatus);
+      if(this.activityStatus == ORDER.MailGame3){ 
+        text = "Challenge: Launch the email app and read an email.";
+        this.EmailGame = true;
+        startEmail();
+      } 
+      if(this.activityStatus == ORDER.GestGame2) {
+        text = "Challenge: Login to your desktop using any password and then locate a file using finder.";
+        this.GestGame = true;
+      }
+      document.getElementById("info").innerHTML = text;
     }
 
     // On user input to the password box, load the next set of icons/images
