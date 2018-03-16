@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // Order of app components to be played through
-enum ORDER {
+export enum ORDER {
     Help = -1,
     Intro = 0,
     Flash,
@@ -11,11 +11,14 @@ enum ORDER {
     MatchTeach2,
     MatchGame,
     Gest,
+    GestGame1,
     GestGame2,
     GestGame3,
     Mail,
     MailTeach,
-    MailGame,
+    MailGame1,
+	  MailGame2,
+    MailGame3,
     MailRWC
 }
 
@@ -47,12 +50,15 @@ export class AppComponent {
                this.appStatus === ORDER.MatchGame;
       } case "Gest": {
         return this.appStatus === ORDER.Gest ||
+               this.appStatus === ORDER.GestGame1 ||
                this.appStatus === ORDER.GestGame2 ||
                this.appStatus === ORDER.GestGame3;
       } case "Mail": {
         return this.appStatus === ORDER.Mail ||
                this.appStatus === ORDER.MailTeach ||
-               this.appStatus === ORDER.MailGame ||
+               this.appStatus === ORDER.MailGame1 ||
+               this.appStatus === ORDER.MailGame2 ||
+               this.appStatus === ORDER.MailGame3 ||
                this.appStatus === ORDER.MailRWC;
       }
     }

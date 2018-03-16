@@ -15,6 +15,7 @@ import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-
 import { DesktopCanvasComponent } from './desktop-canvas/desktop-canvas.component';
 import { NimbleHelpComponent } from './nimble-help/nimble-help.component';
 import { VideoChatComponent } from './video-chat/video-chat.component';
+import { PhoneComponent } from './phone/phone.component';
 
 
 describe('AppComponent', () => {
@@ -24,6 +25,7 @@ describe('AppComponent', () => {
         AppComponent,
         EmailComponent,
         VirtualcComponent,
+    		PhoneComponent,
         MatchingComponent,
         FlashcardComponent,
         IntroIconsComponent,
