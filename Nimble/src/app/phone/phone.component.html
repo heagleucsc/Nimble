@@ -1,35 +1,48 @@
-<p id="info"> Challenge: Open the email app and then open a email. You can return to the inbox from an email but clicking on the inbox button at the top of the screen. Then return to the home screen by clicking the home button!</p>
+<head>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+</head>
 
-<div class="smartphone">
-	<div class="content">
-		<img id="screen" src="../../assets/phone/home.png">
-		<img id="message" src="../../assets/phone/messIcon.jpg" (click) = "openApp('messages')"> 
-		<img id="calender" src="../../assets/phone/calIcon.jpg" (click) = "openApp('calender')"> 
-		<img id="photo" src="../../assets/phone/photoIcon.jpg" (click) = "openApp('photo')"> 
-		<img id="camera" src="../../assets/phone/camIcon.jpg" (click) = "openApp('camera')">
-		<img id="weather" src="../../assets/phone/weatherIcon.jpg" (click) = "openApp('weather')">
-		<img id="clock" src="../../assets/phone/clockIcon.jpg" (click) = "openApp('clock')">
-		<img id="map" src="../../assets/phone/mapIcon.jpg" (click) = "openApp('maps')">
-		<img id="video" src="../../assets/phone/vidIcon.jpg" (click) = "openApp('videos')">
-		<img id="wallet" src="../../assets/phone/wallIcon.jpg" (click) = "openApp('wallet')">
-		<img id="notes" src="../../assets/phone/noteIcon.jpg" (click) = "openApp('notes')">
-		<img id="reminder" src="../../assets/phone/remIcon.jpg" (click) = "openApp('reminder')">
-		<img id="stocks" src="../../assets/phone/stockIcon.jpg" (click) = "openApp('stocks')">
-		<img id="itunes" src="../../assets/phone/itunesIcon.jpg" (click) = "openApp('itunes')">
-		<img id="appStore" src="../../assets/phone/appStoreIcon.jpg" (click) = "openApp('appStore')">
-		<img id="ibooks" src="../../assets/phone/ibooksIcon.jpg" (click) = "openApp('ibook')">
-		<img id="health" src="../../assets/phone/healthIcon.jpg" (click) = "openApp('health')">
-		<img id="email" src="../../assets/phone/appicon.jpg" (click) = "openAppEmail()"> 
-		<img id="phone" src="../../assets/phone/phoneIcon.jpg" (click) = "openApp('phone')"> 
-		<img id="safari" src="../../assets/phone/safariIcon.jpg" (click) = "openApp('safari')">
-		<img id="music" src="../../assets/phone/musicIcon.jpg" (click) = "openApp('music')">
-		<img id="settings" src="../../assets/phone/setIcon.jpg" (click) = "openApp('settings')">
-		<img id="e1" src="../../assets/phone/e1.jpg" (click) = "openEmail('email1')" style="display: none;">
-		<img id="e2" src="../../assets/phone/e2.jpg" (click) = "openEmail('email2')" style="display: none;">
-		<img id="e3" src="../../assets/phone/e3.jpg" (click) = "openEmail('email3')" style="display: none;">
-		<img id="e4" src="../../assets/phone/e4.jpg" (click) = "openEmail('email4')" style="display: none;"> 
-		<img id="e5" src="../../assets/phone/e5.jpg" (click) = "openEmail('email5')" style="display: none;">
-		<img id="inbox" src="../../assets/phone/inboxbutton.jpg" (click) = "openAppEmail()" style="display: none;">
+<div class ="card">
+	<div class="card-header">
+		<div class="card-title">
+			<h1 id="title">Interactive Demo</h1>
+			<p id="info"> Challenge:</p>
+		</div>
 	</div>
-	<button id="home-btn" (click) = "goHome()"> </button>
+ 
+	<div class = "activity">
+		<div class="smartphone">
+			<div class="content">
+				<img id="screen" src="../../assets/phone/home.png">
+				<img id="message" src="../../assets/phone/messIcon.jpg" (click) = "openApp('messages')"> 
+				<img id="calender" src="../../assets/phone/calIcon.jpg" (click) = "openApp('calender')"> 
+				<img id="photo" src="../../assets/phone/photoIcon.jpg" (click) = "openApp('photo')"> 
+				<img id="camera" src="../../assets/phone/camIcon.jpg" (click) = "openApp('camera')">
+				<img id="weather" src="../../assets/phone/weatherIcon.jpg" (click) = "openApp('weather')">
+				<img id="clock" src="../../assets/phone/clockIcon.jpg" (click) = "openApp('clock')">
+				<img id="map" src="../../assets/phone/mapIcon.jpg" (click) = "openApp('maps')">
+				<img id="video" src="../../assets/phone/vidIcon.jpg" (click) = "openApp('videos')">
+				<img id="wallet" src="../../assets/phone/wallIcon.jpg" (click) = "openApp('wallet')">
+				<img id="notes" src="../../assets/phone/noteIcon.jpg" (click) = "openApp('notes')">
+				<img id="reminder" src="../../assets/phone/remIcon.jpg" (click) = "openApp('reminder')">
+				<img id="stocks" src="../../assets/phone/stockIcon.jpg" (click) = "openApp('stocks')">
+				<img id="itunes" src="../../assets/phone/itunesIcon.jpg" (click) = "openApp('itunes')">
+				<img id="appStore" src="../../assets/phone/appStoreIcon.jpg" (click) = "openApp('appStore')">
+				<img id="ibooks" src="../../assets/phone/ibooksIcon.jpg" (click) = "openApp('ibook')">
+				<img id="health" src="../../assets/phone/healthIcon.jpg" (click) = "openApp('health')">
+				<img id="email" src="../../assets/phone/appicon.jpg" (click) = "openAppEmail()"> 
+				<img id="phone" src="../../assets/phone/phoneIcon.jpg" (click) = "openApp('phone')"> 
+				<img id="safari" src="../../assets/phone/safariIcon.jpg" (click) = "openApp('safari')">
+				<img id="music" src="../../assets/phone/musicIcon.jpg" (click) = "openApp('music')">
+				<img id="settings" src="../../assets/phone/setIcon.jpg" (click) = "openApp('settings')">
+				<img id="e1" src="../../assets/phone/e1.jpg" (click) = "openEmail('email1')" style="display: none;">
+				<img id="e2" src="../../assets/phone/e2.jpg" (click) = "openEmail('email2')" style="display: none;">
+				<img id="e3" src="../../assets/phone/e3.jpg" (click) = "openEmail('email3')" style="display: none;">
+				<img id="e4" src="../../assets/phone/e4.jpg" (click) = "openEmail('email4')" style="display: none;"> 
+				<img id="e5" src="../../assets/phone/e5.jpg" (click) = "openEmail('email5')" style="display: none;">
+				<img id="inbox" src="../../assets/phone/inboxbutton.jpg" (click) = "openAppEmail()" style="display: none;">
+			</div>
+			<button id="home-btn" (click) = "goHome()"> </button>
+		</div>
+	</div>
 </div>

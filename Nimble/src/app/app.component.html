@@ -36,12 +36,15 @@
     <app-icons-teach *ngIf="appStatus === ORDER.MatchTeach2"></app-icons-teach>
     <app-matching *ngIf="appStatus === ORDER.MatchGame"></app-matching>
     <app-intro-gestures *ngIf="appStatus === ORDER.Gest"></app-intro-gestures>
-    <app-desktop-canvas *ngIf="appStatus === ORDER.GestGame2"></app-desktop-canvas>
+    <app-desktop-canvas *ngIf="appStatus === ORDER.GestGame2 || appStatus === ORDER.MailGame3"
+     [activityStatus]="appStatus"></app-desktop-canvas>
     <app-video-chat *ngIf="appStatus === ORDER.GestGame3"></app-video-chat>
     <app-intro-email *ngIf="appStatus === ORDER.Mail"></app-intro-email>
     <app-virtualc *ngIf="appStatus === ORDER.MailTeach"></app-virtualc>
-    <app-email *ngIf="appStatus === ORDER.MailGame"></app-email>
+    <app-email *ngIf="appStatus === ORDER.MailGame1"></app-email>
     <app-email-rwc *ngIf="appStatus === ORDER.MailRWC"></app-email-rwc>
+	  <app-phone *ngIf="appStatus === ORDER.GestGame1 || appStatus === ORDER.MailGame2"
+	   [activityStatus]="appStatus"></app-phone>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>

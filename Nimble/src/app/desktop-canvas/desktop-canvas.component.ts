@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ORDER} from '../app.component';
 
 @Component({
   selector: 'app-desktop-canvas',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-canvas.component.css']
 })
 export class DesktopCanvasComponent implements OnInit {
+    @Input() activityStatus = 0;
+    ORDER = ORDER;
 
     // Set all interactive elements to hidden by default
     finder = false;
@@ -14,6 +17,8 @@ export class DesktopCanvasComponent implements OnInit {
     email = false;
     inbox = false;
     displayMessage = false;
+    GestGame = false;
+    EmailGame = false;
 
     constructor() { }
 
@@ -24,6 +29,27 @@ export class DesktopCanvasComponent implements OnInit {
 	        ctx = canvas.getContext('2d');
 	    canvas.height = bg.height;
 		  canvas.width = Math.round(bg.height*(bg.naturalWidth/bg.naturalHeight));
+      this.getMessage();
+    }
+
+    getMessage(){
+      let text;
+      let title;
+      console.log(this.activityStatus);
+      if(this.activityStatus == ORDER.MailGame3){ 
+        title = "Find an Email";
+        text = "Challenge: Launch the email app and read an email.";
+        this.EmailGame = true;
+        this.login();
+        this.startEmail();
+      } 
+      if(this.activityStatus == ORDER.GestGame2) {
+        title = "Learn the Basics";
+        text = "Challenge: Login to your desktop using any password and then locate a file using finder.";
+        this.GestGame = true;
+      }
+      document.getElementById("title").innerHTML = title;
+      document.getElementById("info").innerHTML = text;
     }
 
     // On user input to the password box, load the next set of icons/images
@@ -61,16 +87,6 @@ export class DesktopCanvasComponent implements OnInit {
     // On user input to click the 
     showMessage() {
       this.displayMessage = true;
-    }
-
-    // Start of the next section, hide all elements unique to the previous section
-    desktopDone() {
-      this.finder = false;
-      this.files = false;
-      this.folder = false;
-      this.email = false;
-      this.inbox = false;
-      this.displayMessage = false;
     }
 
 }
