@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class FlashcardComponent implements OnInit {
 
   keyword = [
-		["Term", "Definition"],
 		//General
   	["Cursor", "A cursor is the position indicator on a computer display screen where a user can enter text"],
   	["Mouse", "A hand-operated input device used to manipulate objects on a computer screen"],
@@ -88,8 +87,8 @@ export class FlashcardComponent implements OnInit {
 	
 	backcard(): void {
   	this.index = (this.index - 1 + this.total_cards) % this.total_cards;
-  	document.getElementById("term").innerHTML = "Term: " + this.keyword[this.index][0];
-  	document.getElementById("definition").innerHTML = "Definition: " + this.keyword[this.index][1];
+  	document.getElementById("term").innerHTML =  this.keyword[this.index][0];
+  	document.getElementById("definition").innerHTML = this.keyword[this.index][1];
   }
 
   flipcard(): void {
