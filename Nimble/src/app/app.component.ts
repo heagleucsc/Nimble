@@ -54,6 +54,9 @@ export class AppComponent {
       } case "MatchTeach1": {
         this.appStatus = "MatchTeach2";
       break;
+      } case "MatchTeach": {
+        this.appStatus = "MatchGame";
+      break;
       } case "MatchTeach2": {
         this.appStatus = "MatchGame";
         break;
