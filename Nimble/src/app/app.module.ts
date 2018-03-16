@@ -13,6 +13,7 @@ import { IconsTeachComponent } from './icons-teach/icons-teach.component';
 import { IntroGesturesComponent } from './intro-gestures/intro-gestures.component';
 import { IntroEmailComponent } from './intro-email/intro-email.component';
 import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-detailed.component';
+import { AdjustSettingsComponent } from './adjust-settings/adjust-settings.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { IconsTeachDetailedComponent } from './icons-teach-detailed/icons-teach-
     IconsTeachComponent,
     IntroGesturesComponent,
     IntroEmailComponent,
-    IconsTeachDetailedComponent
+    IconsTeachDetailedComponent,
+    AdjustSettingsComponent
   ],
   imports: [
     BrowserModule
