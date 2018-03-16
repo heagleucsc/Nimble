@@ -10,11 +10,11 @@ export class EmailComponent implements OnInit {
   source = "../../assets/email/imgs/";
 
 	keyword = [
-		["icon_attach.png", "Add an Attachment"],
-		["icon_compose.png", "Compose an Email"],
-		["icon_search.png", "Search"],
-		["icon_send.png", "Send"],
-		["icon_trash.png", "Delete"]
+		["icon_attach.jpeg", "Add an Attachment"],
+		["icon_compose.jpeg", "Compose an Email"],
+		["icon_search.jpeg", "Search"],
+		["icon_send.jpeg", "Send"],
+		["icon_trash.jpeg", "Delete"]
 	];
 
   index = 0;
@@ -23,12 +23,6 @@ export class EmailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   //  img = document.createElement("img");
-   //  img.setAttribute("src", this.source + this.keyword[this.index][0]);
-  	// parent = document.getElementById("email term");
-   //  parent.parentNode.replaceChild(img, parent);
-   console.log(this.source + this.keyword[this.index][0]);
-   console.log(document.getElementById("email term"));
    document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
   	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
   }
@@ -38,10 +32,9 @@ export class EmailComponent implements OnInit {
   	document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
   	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
 	}
-	
+
   backcard(): void {
   	this.index = (this.index - 1 + this.total_cards) % this.total_cards;
-  	// console.log(this.index);
   	document.getElementById("email term").innerHTML = "Term: <img src = " + this.source + this.keyword[this.index][0] + " style = 'max-height: 30px; max-width: 30px;'>";
   	document.getElementById("email definition").innerHTML = "Definition: " + this.keyword[this.index][1];
   }
