@@ -1,36 +1,41 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 <div style="text-align:center;">
-  
+
   <header>
       <img id="text-logo" src="../assets/nimble_logo_transparent_80.png">
       <button id="nav-btn-help">Help <i class="material-icons md-18 nav-icon">help</i></button>
   </header>
-  
+
   <hr>  <!-- mustard yellow divider -->
 
   <div id="sidebar">
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus.isIntro}"
-     (click)="setStatus('isIntro')">1. Introduction</button>
+     [ngClass]="{'nav-btn-cur' : appStatus === 'Intro' || appStatus === 'IntroGame'}"
+     (click)="setStatus('Intro')">1. Introduction</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus.isFlash}" 
-     (click)="setStatus('isFlash')">2. Terminology</button>
+     [ngClass]="{'nav-btn-cur' : appStatus === 'Flash' || appStatus === 'FlashGame'}"
+     (click)="setStatus('Flash')">2. Terminology</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus.isMatch}"
-     (click)="setStatus('isMatch')">3. Icons</button>
-    <button class="nav-btn" 
-     [ngClass]="{'nav-btn-cur' : appStatus.isGest}" 
-     (click)="setStatus('isGest')">4. Essential Skills</button>
+     [ngClass]="{'nav-btn-cur' : appStatus === 'Match' || appStatus === 'MatchGame'}"
+     (click)="setStatus('Match')">3. Icons</button>
     <button class="nav-btn"
-     [ngClass]="{'nav-btn-cur' : appStatus.isMail}"
-     (click)="setStatus('isMail')">5. E-Mail</button>
+     [ngClass]="{'nav-btn-cur' : appStatus === 'Gest' || appStatus === 'GestGame'}"
+     (click)="setStatus('Gest')">4. Essential Skills</button>
+    <button class="nav-btn"
+     [ngClass]="{'nav-btn-cur' : appStatus === 'Mail' || appStatus === 'MailGame'}"
+     (click)="setStatus('Mail')">5. E-Mail</button>
   </div>
 
-  <body>
-    <app-intro-nimble *ngIf="appStatus.isIntro"></app-intro-nimble>
-    <app-intro-icons *ngIf="appStatus.isMatch"></app-intro-icons>
-    <app-intro-terminology *ngIf="appStatus.isFlash"></app-intro-terminology> 
-    <app-intro-gestures *ngIf="appStatus.isGest"></app-intro-gestures>
-    <app-intro-email *ngIf="appStatus.isMail"></app-intro-email>
-  </body>
+  <div id="app-body">
+    <app-intro-nimble *ngIf="appStatus === 'Intro'"></app-intro-nimble>
+    <app-intro-terminology *ngIf="appStatus === 'Flash'"></app-intro-terminology>
+    <app-flashcard *ngIf="appStatus === 'FlashGame'"></app-flashcard>
+    <app-intro-icons *ngIf="appStatus === 'Match'"></app-intro-icons>
+    <app-matching *ngIf="appStatus === 'MatchGame'"></app-matching>
+    <app-intro-gestures *ngIf="appStatus === 'Gest'"></app-intro-gestures>
+    <app-intro-email *ngIf="appStatus === 'Mail'"></app-intro-email>
+    <button id="continue" (click)="contFun()">{{contStr}}
+        <i class="material-icons md-24 nav-icon red">play_arrow</i>
+    </button>
+  </div>
 </div>

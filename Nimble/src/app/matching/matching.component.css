@@ -15,6 +15,11 @@ li {
   margin: 0 auto;
 }
 
+#matching-body {
+  position: relative;
+  height: 640px;
+}
+
 #nav-btn-again {
   float: left;
   background-color: white;
@@ -46,6 +51,10 @@ li {
   float: left;
 }
 
+#wrong-text {
+  color: #ED1C24;
+}
+
 .active {
   outline: 4px solid #69c9d6;
   transition: 0.1s ease;
@@ -74,7 +83,7 @@ li {
   border: none;
   border-left: 6px solid #5eb4c0;
   outline: none;
-  
+
 }
 
 h2 {

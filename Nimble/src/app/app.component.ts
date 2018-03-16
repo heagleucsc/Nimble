@@ -6,17 +6,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Nimble';
-  appStatus = {
-      isIntro: true,
-      isFlash: false,
-      isMatch: false,
-      isGest: false,
-      isMail: false
-  }
+  title:string = 'Nimble';
+  appStatus:string = "Intro";
+  contStr:string = "Begin";
 
   setStatus(status: string): void {
-      Object.keys(this.appStatus).forEach(s => this.appStatus[s] = false);
-      this.appStatus[status] = true;
+      this.appStatus = status;
+      this.contStr = this.appStatus === "Intro" ? "Begin" : "Continue";
+  }
+
+  contFun(): void {
+    switch(this.appStatus) {
+      case "Intro": {
+        this.appStatus = "Flash";
+      break;
+      } case "Flash": {
+        this.appStatus = "FlashGame";
+      break;
+      } case "FlashGame": {
+        this.appStatus = "Match";
+      break;
+      } case "Match": {
+        this.appStatus = "MatchGame";
+      break;
+      } case "MatchGame": {
+        this.appStatus = "Gest";
+      break;
+      } case "Gest": {
+        this.appStatus = "GestGame";
+      break;
+      } case "GestGame": {
+        this.appStatus = "Mail";
+      break;
+      } case "Mail": {
+        this.appStatus = "MailGame";
+      break;
+      } case "MailGame": {
+        // ???
+      break;
+      }
+    }
+    this.contStr = this.appStatus === "Intro" ? "Begin" : "Continue";
   }
 }
