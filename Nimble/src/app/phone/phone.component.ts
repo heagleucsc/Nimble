@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ORDER} from '../app.component';
 
 @Component({
   selector: 'app-phone',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phone.component.css']
 })
 export class PhoneComponent implements OnInit {
-
+  @Input() activityStatus = 0;
+  ORDER = ORDER;
+  
   constructor() { }
 
   ngOnInit() {
+	console.log(this.activityStatus);
+	//check which activity it is 
+	this.getMessage();
+  }
+  
+  getMessage(){
+	var text;
+	
+	if(this.activityStatus == ORDER.MailGame2){ 
+	   text = "Challenge: Open the email app and then open a email. Return to the inbox by clicking the inbox button.";
+	}else{
+	   text = "Challenge: Open three different apps. Open an app by clicking on its icon, and return to the home screen by pression the home button.";
+	}	
+	document.getElementById("info").innerHTML = text;
   }
 
   goHome(){

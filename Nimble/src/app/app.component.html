@@ -39,6 +39,8 @@
     <app-intro-email *ngIf="appStatus === ORDER.Mail"></app-intro-email>
     <app-email-rwc *ngIf="appStatus === ORDER.MailTeach"></app-email-rwc>
     <app-email *ngIf="appStatus === ORDER.MailGame"></app-email>
+	<app-phone *ngIf="appStatus === ORDER.GestGame1 || appStatus === ORDER.MailGame2"
+	[activityStatus]="appStatus"></app-phone>
     <button id="continue" (click)="contFun()">{{contStr}}
         <i class="material-icons md-24 nav-icon red">play_arrow</i>
     </button>
